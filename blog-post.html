@@ -1,0 +1,89 @@
+<!-- FILE: blog-post.html (Separate Blog Details Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASNA - Blog Article | Pure Honey Stories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fefaf5; color:#2e241f; }
+    .blog-detail-container { max-width: 850px; margin: 60px auto; padding: 0 24px; }
+    .back-home { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px; color:#d48f2b; text-decoration:none; font-weight:600; }
+    .back-home:hover { text-decoration:underline; }
+    .article-img { width:100%; border-radius: 32px; margin: 20px 0; box-shadow:0 12px 24px rgba(0,0,0,0.1); }
+    .blog-category { color: #e6b422; font-weight: 700; letter-spacing:1px; font-size:0.8rem; text-transform:uppercase; }
+    h1 { font-size: 2.8rem; font-family: 'Playfair Display', serif; margin: 15px 0 20px; color:#5a3e2b; }
+    .article-content { font-size: 1.1rem; line-height: 1.7; margin-top: 30px; color:#3b2d23; }
+    .article-content p { margin-bottom: 1.5rem; }
+    .footer-small { background:#2e241f; color:#f3e1c0; padding: 30px 20px; text-align:center; margin-top:70px; border-radius: 24px 24px 0 0; }
+    .brand-highlight { color:#e6b422; font-weight:700; }
+    @media (max-width:700px){ h1{font-size:2rem;} .blog-detail-container{margin:30px auto;} }
+  </style>
+</head>
+<body>
+  <div class="blog-detail-container">
+    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to NASNA Home</a>
+    <div id="blogDetailContent">
+      <div style="text-align:center; padding:60px;"><i class="fas fa-spinner fa-pulse"></i> Loading NASNA honey stories...</div>
+    </div>
+  </div>
+  <div class="footer-small">
+    <p>&copy; 2025 <span class="brand-highlight">NASNA Honey</span> — Sweetness from the hive, crafted with care.</p>
+  </div>
+  <script>
+    // NASNA Blog Database - full articles for details page
+    const postsDB = [
+      { 
+        id: 1, 
+        category: "BEEKEEPING", 
+        title: "How to Start Urban Beekeeping with NASNA", 
+        fullContent: "Urban beekeeping is on the rise. With the right equipment — a flow hive or traditional Langstroth — and a small balcony or rooftop, anyone can become a beekeeper. NASNA recommends starting with a mentor, checking local regulations, providing a water source, and planting pollinator-friendly flowers. Start small, join a local beekeeping club, and soon you'll be harvesting your own liquid gold! At NASNA, we offer starter kits and guidance for aspiring beekeepers. Our mission is to bring back the bees to every neighborhood.",
+        img: "https://placehold.co/800x450/FFE5C4/AC744B?text=NASNA+Beekeeping+Tips"
+      },
+      { 
+        id: 2, 
+        category: "RECIPES", 
+        title: "5 Wholesome Honey-Infused Meals by NASNA", 
+        fullContent: "Honey isn't just a sweetener — it's a star ingredient! Try Honey-Sriracha Glazed Chicken, a classic Honey Oat Bread, or a refreshing Honey Lemonade with mint. For breakfast, spread NASNA whipped honey on toast, or add a drizzle to Greek yogurt with walnuts. Each dish highlights the nuanced flavors of raw honey and its natural antioxidants. NASNA's raw honey varieties bring unique floral notes that elevate any recipe. Stay tuned for more exclusive recipes from our kitchen to yours!",
+        img: "https://placehold.co/800x450/F5DDAA/B97F42?text=NASNA+Honey+Recipes"
+      },
+      { 
+        id: 3, 
+        category: "WELLNESS", 
+        title: "Raw Honey vs Processed: NASNA's Guide", 
+        fullContent: "Raw honey contains natural enzymes, pollen, and compounds like hydrogen peroxide that aid digestion and support immunity. Processed honey is often heated and filtered, destroying beneficial nutrients. While both are sweet, raw honey offers anti-inflammatory properties and can soothe sore throats. Choose NASNA raw, local honey for the ultimate wellness boost. Our unfiltered honey retains all the goodness nature intended. Experience the NASNA difference — pure, potent, and packed with health benefits.",
+        img: "https://placehold.co/800x450/EED6B0/996F45?text=NASNA+Health+Tips"
+      }
+    ];
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = parseInt(urlParams.get('id'));
+    const post = postsDB.find(p => p.id === postId);
+    const container = document.getElementById('blogDetailContent');
+    
+    if(post) {
+      container.innerHTML = `
+        <img src="${post.img}" alt="${post.title}" class="article-img">
+        <div class="blog-category">${post.category}</div>
+        <h1>${post.title}</h1>
+        <div class="article-content">
+          <p>${post.fullContent}</p>
+          <p>At NASNA, we believe in sharing authentic knowledge. This article reflects our passion for pure honey and sustainable apiculture. We hope you enjoyed this read — and remember to always choose raw, ethically sourced honey for both flavor and wellness.</p>
+          <p style="margin-top:30px; font-style:italic;"><i class="fas fa-jar"></i> — The NASNA Honey Team</p>
+          <p style="margin-top:20px;"><a href="index.html" style="color:#d48f2b; font-weight:600;">← Explore more NASNA products</a></p>
+        </div>
+      `;
+    } else {
+      container.innerHTML = `
+        <div style="text-align:center; padding:60px;">
+          <h2>Oops! 🍯</h2>
+          <p>This honey story seems to be missing. Go back to the <a href="index.html" style="color:#d48f2b;">NASNA homepage</a>.</p>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
