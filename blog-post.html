@@ -14,8 +14,11 @@
     .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
     .navbar { background: #ffffffdd; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
     .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1400px; margin: 0 auto; }
-    .logo { font-size: 1.8rem; font-weight: 700; color: #d48f2b; letter-spacing: -0.5px; text-decoration: none; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; font-size: 1.8rem; font-weight: 700; color: #d48f2b; letter-spacing: -0.5px; text-decoration: none; transition: font-size 0.25s ease; }
     .logo span { color: #5a3e2b; font-weight: 500; }
+    .brand-name { color: #d48f2b; }
+    .brand-name span { color: #5a3e2b; }
+    .brand-mark { width: 0; height: 0; border-radius: 50%; opacity: 0; object-fit: cover; transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a { text-decoration: none; font-weight: 600; color: #3a2a20; transition: 0.2s; font-size: 1.05rem; }
     .nav-links a:hover, .nav-links a.active { color: #d48f2b; }
@@ -40,9 +43,17 @@
     .copyright { text-align: center; border-top: 1px solid #4b3628; padding-top: 24px; font-size: 0.9rem; }
     .brand-highlight { color:#e6b422; font-weight:700; }
     @media (max-width:880px){
-      .nav-container { padding: 1rem 1.5rem; }
+      #siteHeader { min-height: 88px; }
+      .navbar { position: fixed; top: 0; left: 0; right: 0; width: 100%; transition: box-shadow 0.25s ease, background 0.25s ease; }
+      .nav-container { min-height: 88px; padding: 1rem 1.5rem; transition: min-height 0.25s ease, padding 0.25s ease; }
       .logo { font-size: 1.4rem; }
-      .nav-links { position: fixed; top: 70px; left: -100%; background: #fffef7; width: 70%; height: 100vh; flex-direction: column; padding: 2rem; gap: 2rem; box-shadow: 5px 0 20px rgba(0,0,0,0.1); transition: 0.3s; border-radius: 0 32px 32px 0; z-index: 999; }
+      .navbar.is-scrolled { background: #fffffff2; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      .navbar.is-scrolled .nav-container { min-height: 64px; padding: 0.55rem 1.25rem; }
+      .navbar.is-scrolled .logo { font-size: 1.12rem; }
+      .navbar.is-scrolled .brand-mark { width: 36px; height: 36px; opacity: 1; }
+      .navbar.is-scrolled .brand-name span { font-size: 0.95rem; }
+      .nav-links { position: fixed; top: 88px; left: -100%; background: #fffef7; width: 70%; height: 100vh; flex-direction: column; padding: 2rem; gap: 2rem; box-shadow: 5px 0 20px rgba(0,0,0,0.1); transition: 0.3s; border-radius: 0 32px 32px 0; z-index: 999; }
+      .navbar.is-scrolled .nav-links { top: 64px; }
       .nav-links.active { left: 0; }
       .menu-icon { display: block; }
       .container { padding: 0 20px; }

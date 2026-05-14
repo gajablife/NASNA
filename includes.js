@@ -17,8 +17,16 @@
 
   const navLinks = document.getElementById('navLinks');
   const menuToggle = document.getElementById('menuToggle');
+  const navbar = document.querySelector('.navbar');
   const currentPage = document.body.dataset.page || 'home';
   const isHomePage = currentPage === 'home';
+
+  const updateHeaderSize = () => {
+    if (!navbar) return;
+    navbar.classList.toggle('is-scrolled', window.scrollY > 20);
+  };
+  updateHeaderSize();
+  window.addEventListener('scroll', updateHeaderSize, { passive: true });
 
   if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
