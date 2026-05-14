@@ -192,9 +192,30 @@
       margin: 12px 0;
     }
     .price {
+      display: block;
       font-weight: 800;
       font-size: 1.5rem;
       color: #d48f2b;
+    }
+    .whatsapp-order {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 10px 18px;
+      border-radius: 40px;
+      background: #25d366;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 18px rgba(37, 211, 102, 0.2);
+      transition: all 0.25s ease;
+    }
+    .whatsapp-order:hover {
+      background: #1fb958;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 22px rgba(37, 211, 102, 0.28);
     }
 
     /* Gallery Section */
@@ -371,6 +392,12 @@
     }
 
     @media (max-width: 880px) {
+      .nav-container {
+        padding: 1rem 1.5rem;
+      }
+      .logo {
+        font-size: 1.4rem;
+      }
       .nav-links {
         position: fixed;
         top: 70px;
@@ -392,8 +419,33 @@
       .menu-icon {
         display: block;
       }
+      .banner-grid {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0 30px;
+        gap: 16px;
+      }
+      .banner-text {
+        text-align: center;
+        min-width: unset;
+      }
       .banner-text h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
+      }
+      .banner-text h3 {
+        font-size: 1.1rem;
+        margin-top: 10px;
+      }
+      .banner-text p {
+        font-size: 1rem;
+      }
+      .banner-img {
+        order: -1;
+        width: min(58%, 240px);
+        margin: 0 auto;
+      }
+      .banner-img img {
+        border-radius: 32px;
       }
       .section-heading {
         font-size: 2rem;
@@ -403,6 +455,7 @@
       }
       .about-section {
         flex-direction: column;
+        text-align: center;
       }
     }
 
@@ -458,18 +511,27 @@
       <h3>Wildflower Honey</h3>
       <p>Herbal aroma, bold taste, supports digestion & immunity.</p>
       <span class="price"> ₹600</span>
+      <a class="whatsapp-order" href="https://wa.me/919873162762?text=Hello%20NASNA%2C%20I%20would%20like%20to%20place%20an%20order%20for%20Wildflower%20Honey." target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Place Order
+      </a>
     </div>
     <div class="menu-card">
       <div class="menu-icon"><i class="fas fa-tree"></i></div>
       <h3>Fennel Honey</h3>
       <p>Sweet, mildly aromatic, aids digestion & refreshes breath.</p>
       <span class="price">₹600</span>
+      <a class="whatsapp-order" href="https://wa.me/919873162762?text=Hello%20NASNA%2C%20I%20would%20like%20to%20place%20an%20order%20for%20Fennel%20Honey." target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Place Order
+      </a>
     </div>
     <div class="menu-card">
       <div class="menu-icon"><i class="fas fa-seedling"></i></div>
       <h3>Multi Floral Honey</h3>
       <p>Rich floral blend, naturally sweet, raw & nutrient-rich.</p>
       <span class="price">₹600</span>
+      <a class="whatsapp-order" href="https://wa.me/919873162762?text=Hello%20NASNA%2C%20I%20would%20like%20to%20place%20an%20order%20for%20Multi%20Floral%20Honey." target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Place Order
+      </a>
     </div>
   </div>
 
