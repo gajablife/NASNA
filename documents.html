@@ -307,24 +307,8 @@
     }
   </style>
 </head>
-<body>
-  <div class="navbar">
-    <div class="nav-container">
-      <a class="logo" href="index.html">NASNA<span> Honey 🍯</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#menu">Honey Menu</a></li>
-        <li><a href="index.html#gallery">Gallery</a></li>
-        <li><a href="index.html#blog">Blog</a></li>
-        <li><a href="documents.html" class="active">Documents</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-      <div class="menu-icon" id="menuToggle">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-  </div>
+<body data-page="documents">
+  <div id="siteHeader"></div>
 
   <section class="documents-hero">
     <div class="container">
@@ -367,53 +351,10 @@
     </div>
   </main>
 
-  <footer id="contact" class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>NASNA Honey</h4>
-          <p>Pure raw honey from sustainable hives. Sweetness & wellness since 2020.</p>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><i class="fas fa-chevron-right"></i> <a href="index.html#home">Home</a></li>
-            <li><i class="fas fa-chevron-right"></i> <a href="index.html#menu">Shop Honeys</a></li>
-            <li><i class="fas fa-chevron-right"></i> <a href="index.html#gallery">Gallery</a></li>
-            <li><i class="fas fa-chevron-right"></i> <a href="index.html#blog">Blog</a></li>
-            <li><i class="fas fa-chevron-right"></i> <a href="documents.html">Documents</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact Info</h4>
-          <ul>
-            <li><i class="fas fa-map-marker-alt"></i> NASNA ENTERPRISES BARASATA SAKALPUR VARANASI UTTAR PRADESH Gajepur, Varanasi, Uttar Pradesh, 221403 Varanasi</li>
-            <li><i class="fas fa-phone-alt"></i> +91 9873162762</li>
-            <li><i class="fas fa-envelope"></i> nasnaenterprises@gmail.com</li>
-          </ul>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>&copy; 2026 NASNA Enterprises.</p>
-      </div>
-    </div>
-  </footer>
+  <div id="siteFooter"></div>
 
+  <script src="includes.js"></script>
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-
-    if (menuToggle) {
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-      });
-    }
-
     document.querySelectorAll('.document-panel').forEach(panel => {
       panel.addEventListener('toggle', () => {
         if (!panel.open) return;

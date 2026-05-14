@@ -5,490 +5,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>NASNA | Pure Raw Honey</title>
-  <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background-color: #fefaf5; color: #2e241f; scroll-behavior: smooth; }
+    h1, h2, h3, .logo, .nav-links a, .btn { font-family: 'Playfair Display', serif; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #fefaf5;
-      color: #2e241f;
-      scroll-behavior: smooth;
-    }
+    .navbar { background: #ffffffdd; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1400px; margin: 0 auto; }
+    .logo { font-size: 1.8rem; font-weight: 700; color: #d48f2b; letter-spacing: -0.5px; text-decoration: none; }
+    .logo span { color: #5a3e2b; font-weight: 500; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 600; color: #3a2a20; transition: 0.2s; font-size: 1.05rem; }
+    .nav-links a:hover, .nav-links a.active { color: #d48f2b; }
+    .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #5a3e2b; }
 
-    h1, h2, h3, .logo, .nav-links a, .btn {
-      font-family: 'Playfair Display', serif;
-    }
+    .btn { display: inline-block; background: #e6b422; color: #2e241f; padding: 12px 28px; border-radius: 40px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: none; cursor: pointer; }
+    .btn-dark { background: #5a3e2b; color: white; }
+    .btn:hover { background: #c9901e; transform: translateY(-3px); box-shadow: 0 12px 20px rgba(0,0,0,0.1); }
 
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
+    .banner { background: linear-gradient(107deg, #ffeed9 0%, #fbe5c2 100%); border-radius: 0 0 60px 60px; margin-bottom: 20px; }
+    .banner-grid { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 60px 0 40px; }
+    .banner-text { flex: 1; min-width: 280px; }
+    .banner-text h1 { font-size: 3.6rem; font-weight: 800; color: #b46f1a; line-height: 1.2; }
+    .banner-text h3 { color: #2e241f; margin-top: 12px; }
+    .banner-text p { font-size: 1.2rem; margin: 20px 0; color: #4f3a2c; }
+    .banner-img { flex: 0.9; text-align: center; }
+    .banner-img img { max-width: 100%; filter: drop-shadow(12px 12px 20px rgba(0,0,0,0.1)); border-radius: 40px; }
 
-    /* navbar */
-    .navbar {
-      background: #ffffffdd;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #d48f2b;
-      letter-spacing: -0.5px;
-    }
-    .logo span {
-      color: #5a3e2b;
-      font-weight: 500;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #3a2a20;
-      transition: 0.2s;
-      font-size: 1.05rem;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: #d48f2b;
-    }
-    .menu-icon {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #5a3e2b;
-    }
+    .section-heading { text-align: center; font-size: 2.6rem; font-weight: 700; margin: 60px 0 30px; position: relative; color: #5a3e2b; }
+    .section-heading:after { content: ''; display: block; width: 80px; height: 4px; background: #e6b422; margin: 12px auto 0; border-radius: 4px; }
 
-    .btn {
-      display: inline-block;
-      background: #e6b422;
-      color: #2e241f;
-      padding: 12px 28px;
-      border-radius: 40px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      border: none;
-      cursor: pointer;
-    }
-    .btn-dark {
-      background: #5a3e2b;
-      color: white;
-    }
-    .btn:hover {
-      background: #c9901e;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
-    }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2rem; }
+    .menu-card { background: white; border-radius: 32px; overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,0.05); transition: all 0.3s; text-align: center; padding: 24px 16px 28px; }
+    .menu-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.1); }
+    .menu-icon { font-size: 3.5rem; color: #e6b422; }
+    .menu-card h3 { margin: 16px 0 8px; font-size: 1.7rem; }
+    .menu-card p { color: #6b4f3a; margin: 12px 0; }
+    .price { display: block; font-weight: 800; font-size: 1.5rem; color: #d48f2b; }
+    .whatsapp-order { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; padding: 10px 18px; border-radius: 40px; background: #25d366; color: white; font-weight: 700; text-decoration: none; box-shadow: 0 8px 18px rgba(37, 211, 102, 0.2); transition: all 0.25s ease; }
+    .whatsapp-order:hover { background: #1fb958; transform: translateY(-3px); box-shadow: 0 12px 22px rgba(37, 211, 102, 0.28); }
 
-    /* Banner Section */
-    .banner {
-      background: linear-gradient(107deg, #ffeed9 0%, #fbe5c2 100%);
-      border-radius: 0 0 60px 60px;
-      margin-bottom: 20px;
-    }
-    .banner-grid {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 60px 0 40px;
-    }
-    .banner-text {
-      flex: 1;
-      min-width: 280px;
-    }
-    .banner-text h1 {
-      font-size: 3.6rem;
-      font-weight: 800;
-      color: #b46f1a;
-      line-height: 1.2;
-    }
-    .banner-text p {
-      font-size: 1.2rem;
-      margin: 20px 0;
-      color: #4f3a2c;
-    }
-    .banner-img {
-      flex: 0.9;
-      text-align: center;
-    }
-    .banner-img img {
-      max-width: 100%;
-      filter: drop-shadow(12px 12px 20px rgba(0,0,0,0.1));
-      border-radius: 40px;
-    }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
+    .gallery-item { overflow: hidden; border-radius: 28px; box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1); transition: transform 0.4s ease; cursor: pointer; aspect-ratio: 1 / 1; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .gallery-item:hover img { transform: scale(1.08); }
 
-    .section-heading {
-      text-align: center;
-      font-size: 2.6rem;
-      font-weight: 700;
-      margin: 60px 0 30px;
-      position: relative;
-      color: #5a3e2b;
-    }
-    .section-heading:after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: #e6b422;
-      margin: 12px auto 0;
-      border-radius: 4px;
-    }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .blog-card { background: white; border-radius: 2rem; overflow: hidden; transition: all 0.25s; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+    .blog-card img { width: 100%; height: 210px; object-fit: cover; }
+    .blog-content { padding: 1.5rem; }
+    .blog-category { color: #e6b422; font-weight: 700; letter-spacing: 1px; font-size: 0.75rem; text-transform: uppercase; }
+    .blog-title { font-size: 1.4rem; margin: 10px 0; }
+    .blog-excerpt { color: #5e4636; margin: 12px 0; line-height: 1.4; }
+    .read-more { color: #d48f2b; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
 
-    /* Menu Section */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 2rem;
-    }
-    .menu-card {
-      background: white;
-      border-radius: 32px;
-      overflow: hidden;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.05);
-      transition: all 0.3s;
-      text-align: center;
-      padding: 24px 16px 28px;
-    }
-    .menu-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 30px rgba(0,0,0,0.1);
-    }
-    .menu-icon {
-      font-size: 3.5rem;
-      color: #e6b422;
-    }
-    .menu-card h3 {
-      margin: 16px 0 8px;
-      font-size: 1.7rem;
-    }
-    .menu-card p {
-      color: #6b4f3a;
-      margin: 12px 0;
-    }
-    .price {
-      display: block;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: #d48f2b;
-    }
-    .whatsapp-order {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 16px;
-      padding: 10px 18px;
-      border-radius: 40px;
-      background: #25d366;
-      color: white;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 8px 18px rgba(37, 211, 102, 0.2);
-      transition: all 0.25s ease;
-    }
-    .whatsapp-order:hover {
-      background: #1fb958;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 22px rgba(37, 211, 102, 0.28);
-    }
+    .about-section { background: #fff6ed; border-radius: 48px; margin: 40px 0; padding: 40px 32px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+    .about-img { flex: 1; border-radius: 36px; overflow: hidden; }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-text { flex: 1.2; }
+    .about-text h3 { font-size: 2rem; margin-bottom: 20px; }
+    .about-text p { line-height: 1.5; margin-bottom: 20px; color: #3f2d1f; }
 
-    /* Gallery Section */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 22px;
-    }
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 28px;
-      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
-      transition: transform 0.4s ease;
-      cursor: pointer;
-      aspect-ratio: 1 / 1;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.08);
-    }
+    .footer { background: #2e241f; color: #f3e1c0; padding: 50px 0 20px; margin-top: 60px; border-radius: 40px 40px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-size: 1.4rem; margin-bottom: 20px; color: #f8cf7a; }
+    .footer-col p, .footer-col ul { line-height: 1.7; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin: 10px 0; }
+    .footer-col ul li i { margin-right: 8px; color: #e6b422; }
+    .social-icons a { color: #f3e1c0; font-size: 1.5rem; margin-right: 18px; transition: 0.2s; display: inline-block; }
+    .social-icons a:hover { color: #e6b422; transform: translateY(-3px); }
+    .copyright { text-align: center; border-top: 1px solid #4b3628; padding-top: 24px; font-size: 0.9rem; }
 
-    /* Blog Section */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .blog-card {
-      background: white;
-      border-radius: 2rem;
-      overflow: hidden;
-      transition: all 0.25s;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-    .blog-card img {
-      width: 100%;
-      height: 210px;
-      object-fit: cover;
-    }
-    .blog-content {
-      padding: 1.5rem;
-    }
-    .blog-category {
-      color: #e6b422;
-      font-weight: 700;
-      letter-spacing: 1px;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-    }
-    .blog-title {
-      font-size: 1.4rem;
-      margin: 10px 0;
-    }
-    .blog-excerpt {
-      color: #5e4636;
-      margin: 12px 0;
-      line-height: 1.4;
-    }
-    .read-more {
-      color: #d48f2b;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* About Us */
-    .about-section {
-      background: #fff6ed;
-      border-radius: 48px;
-      margin: 40px 0;
-      padding: 40px 32px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-    }
-    .about-img {
-      flex: 1;
-      border-radius: 36px;
-      overflow: hidden;
-    }
-    .about-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .about-text {
-      flex: 1.2;
-    }
-    .about-text h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .about-text p {
-      line-height: 1.5;
-      margin-bottom: 20px;
-      color: #3f2d1f;
-    }
-
-    /* Footer */
-    .footer {
-      background: #2e241f;
-      color: #f3e1c0;
-      padding: 50px 0 20px;
-      margin-top: 60px;
-      border-radius: 40px 40px 0 0;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-    .footer-col h4 {
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-      color: #f8cf7a;
-    }
-    .footer-col p, .footer-col ul {
-      line-height: 1.7;
-    }
-    .footer-col ul {
-      list-style: none;
-    }
-    .footer-col ul li {
-      margin: 10px 0;
-    }
-    .footer-col ul li i {
-      margin-right: 8px;
-      color: #e6b422;
-    }
-    .social-icons a {
-      color: #f3e1c0;
-      font-size: 1.5rem;
-      margin-right: 18px;
-      transition: 0.2s;
-      display: inline-block;
-    }
-    .social-icons a:hover {
-      color: #e6b422;
-      transform: translateY(-3px);
-    }
-    .copyright {
-      text-align: center;
-      border-top: 1px solid #4b3628;
-      padding-top: 24px;
-      font-size: 0.9rem;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-    }
-    .modal img {
-      max-width: 85%;
-      max-height: 85%;
-      border-radius: 24px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; cursor: pointer; }
+    .modal img { max-width: 85%; max-height: 85%; border-radius: 24px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
 
     @media (max-width: 880px) {
-      .nav-container {
-        padding: 1rem 1.5rem;
-      }
-      .logo {
-        font-size: 1.4rem;
-      }
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        background: #fffef7;
-        width: 70%;
-        height: 100vh;
-        flex-direction: column;
-        padding: 2rem;
-        gap: 2rem;
-        box-shadow: 5px 0 20px rgba(0,0,0,0.1);
-        transition: 0.3s;
-        border-radius: 0 32px 32px 0;
-        z-index: 999;
-      }
-      .nav-links.active {
-        left: 0;
-      }
-      .menu-icon {
-        display: block;
-      }
-      .banner-grid {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 0 30px;
-        gap: 16px;
-      }
-      .banner-text {
-        text-align: center;
-        min-width: unset;
-      }
-      .banner-text h1 {
-        font-size: 2.2rem;
-      }
-      .banner-text h3 {
-        font-size: 1.1rem;
-        margin-top: 10px;
-      }
-      .banner-text p {
-        font-size: 1rem;
-      }
-      .banner-img {
-        order: -1;
-        width: min(58%, 240px);
-        margin: 0 auto;
-      }
-      .banner-img img {
-        border-radius: 32px;
-      }
-      .section-heading {
-        font-size: 2rem;
-      }
-      .container {
-        padding: 0 20px;
-      }
-      .about-section {
-        flex-direction: column;
-        text-align: center;
-      }
+      .nav-container { padding: 1rem 1.5rem; }
+      .logo { font-size: 1.4rem; }
+      .nav-links { position: fixed; top: 70px; left: -100%; background: #fffef7; width: 70%; height: 100vh; flex-direction: column; padding: 2rem; gap: 2rem; box-shadow: 5px 0 20px rgba(0,0,0,0.1); transition: 0.3s; border-radius: 0 32px 32px 0; z-index: 999; }
+      .nav-links.active { left: 0; }
+      .menu-icon { display: block; }
+      .banner-grid { flex-direction: column; text-align: center; padding: 20px 0 30px; gap: 16px; }
+      .banner-text { text-align: center; min-width: unset; }
+      .banner-text h1 { font-size: 2.2rem; }
+      .banner-text h3 { font-size: 1.1rem; margin-top: 10px; }
+      .banner-text p { font-size: 1rem; }
+      .banner-img { order: -1; width: min(58%, 240px); margin: 0 auto; }
+      .banner-img img { border-radius: 32px; }
+      .section-heading { font-size: 2rem; }
+      .container { padding: 0 20px; }
+      .about-section { flex-direction: column; text-align: center; }
     }
 
-    .fade-up {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .fade-up.appear {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-up { opacity: 0; transform: translateY(25px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.appear { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-<body>
-
-<div class="navbar">
-  <div class="nav-container">
-    <div class="logo">NASNA<span> Honey 🍯</span></div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#menu">Honey Menu</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="documents.html">Documents</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-icon" id="menuToggle">
-      <i class="fas fa-bars"></i>
-    </div>
-  </div>
-</div>
+<body data-page="home">
+<div id="siteHeader"></div>
 
 <section id="home" class="banner">
   <div class="container banner-grid">
@@ -511,7 +129,7 @@
       <div class="menu-icon"><i class="fas fa-leaf"></i></div>
       <h3>Wildflower Honey</h3>
       <p>Herbal aroma, bold taste, supports digestion & immunity.</p>
-      <span class="price"> ₹600</span>
+      <span class="price">₹600</span>
       <a class="whatsapp-order" href="https://wa.me/919873162762?text=Hello%20NASNA%2C%20I%20would%20like%20to%20place%20an%20order%20for%20Wildflower%20Honey." target="_blank" rel="noopener">
         <i class="fab fa-whatsapp"></i> Place Order
       </a>
@@ -555,49 +173,13 @@
   </div>
 </main>
 
-<footer id="contact" class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>NASNA Honey</h4>
-        <p>Pure raw honey from sustainable hives. Sweetness & wellness since 2020.</p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><i class="fas fa-chevron-right"></i> <a href="#home" style="color:#f3e1c0; text-decoration:none;">Home</a></li>
-          <li><i class="fas fa-chevron-right"></i> <a href="#menu" style="color:#f3e1c0; text-decoration:none;">Shop Honeys</a></li>
-          <li><i class="fas fa-chevron-right"></i> <a href="#gallery" style="color:#f3e1c0; text-decoration:none;">Gallery</a></li>
-          <li><i class="fas fa-chevron-right"></i> <a href="#blog" style="color:#f3e1c0; text-decoration:none;">Blog</a></li>
-          <li><i class="fas fa-chevron-right"></i> <a href="documents.html" style="color:#f3e1c0; text-decoration:none;">Documents</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact Info</h4>
-        <ul>
-          <li><i class="fas fa-map-marker-alt"></i> NASNA ENTERPRISES
-BARASATA SAKALPUR VARANASI UTTAR PRADESH Gajepur, Varanasi, Uttar Pradesh, 221403
-Varanasi</li>
-          <li><i class="fas fa-phone-alt"></i> +91 9873162762</li>
-          <li><i class="fas fa-envelope"></i> nasnaenterprises@gmail.com</li>
-        </ul>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>&copy; 2026 NASNA Enterprises.</p>
-    </div>
-  </div>
-</footer>
+<div id="siteFooter"></div>
 
 <div id="imageModal" class="modal">
   <img id="modalImg" src="" alt="expanded view">
 </div>
 
+<script src="includes.js"></script>
 <script>
   const galleryImages = [
     "images/1.jpg",
@@ -607,6 +189,7 @@ Varanasi</li>
     "images/3.jpg",
     "images/6.jpg"
   ];
+
   const galleryContainer = document.getElementById('galleryGrid');
   galleryImages.forEach(src => {
     const div = document.createElement('div');
@@ -632,7 +215,6 @@ Varanasi</li>
       category: "BEEKEEPING",
       title: "How to Start Urban Beekeeping with NASNA",
       excerpt: "Discover simple steps to welcome pollinators into your city garden and harvest fresh honey even in small spaces.",
-      fullContent: "Urban beekeeping is on the rise. With the right equipment — a flow hive or traditional Langstroth — and a small balcony or rooftop, anyone can become a beekeeper. NASNA recommends starting with a mentor, checking local regulations, providing a water source, and planting pollinator-friendly flowers. Start small, join a local beekeeping club, and soon you'll be harvesting your own liquid gold!",
       link: "blog-post.html?id=1"
     },
     {
@@ -641,7 +223,6 @@ Varanasi</li>
       category: "RECIPES",
       title: "5 Wholesome Honey-Infused Meals by NASNA",
       excerpt: "From honey glazed carrots to golden milk latte, these recipes bring warmth and health benefits to your table.",
-      fullContent: "Honey isn't just a sweetener — it's a star ingredient! Try Honey-Sriracha Glazed Chicken, a classic Honey Oat Bread, or a refreshing Honey Lemonade with mint. For breakfast, spread NASNA whipped honey on toast, or add a drizzle to Greek yogurt with walnuts. Each dish highlights the nuanced flavors of raw honey and its natural antioxidants.",
       link: "blog-post.html?id=2"
     },
     {
@@ -650,7 +231,6 @@ Varanasi</li>
       category: "WELLNESS",
       title: "Raw Honey vs Processed: NASNA's Guide",
       excerpt: "Understand why raw honey is packed with antioxidants, enzymes and beats processed syrups every time.",
-      fullContent: "Raw honey contains natural enzymes, pollen, and compounds like hydrogen peroxide that aid digestion and support immunity. Processed honey is often heated and filtered, destroying beneficial nutrients. While both are sweet, raw honey offers anti-inflammatory properties and can soothe sore throats. Choose NASNA raw, local honey for the ultimate wellness boost.",
       link: "blog-post.html?id=3"
     }
   ];
@@ -676,30 +256,6 @@ Varanasi</li>
   }
   renderBlogs();
 
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  }
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      navLinks.classList.remove('active');
-      const targetId = link.getAttribute('href');
-      if(targetId && targetId !== '#' && targetId.startsWith('#')) {
-        e.preventDefault();
-        const targetElement = document.querySelector(targetId);
-        if(targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else if (targetId === '#') {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
-  });
-
   const modal = document.getElementById('imageModal');
   if (modal) {
     modal.addEventListener('click', () => {
@@ -720,34 +276,35 @@ Varanasi</li>
     el.classList.add('fade-up');
     observer.observe(el);
   });
-  
-  const sections = ['home', 'menu', 'gallery', 'blog', 'about'];
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPos = window.scrollY + 150;
-    sections.forEach(sectionId => {
-      const section = document.getElementById(sectionId);
-      if(section) {
-        const offsetTop = section.offsetTop;
-        const offsetBottom = offsetTop + section.offsetHeight;
-        if(scrollPos >= offsetTop && scrollPos < offsetBottom) {
-          current = sectionId;
+
+  window.addEventListener('siteIncludesLoaded', () => {
+    const sections = ['home', 'menu', 'gallery', 'blog', 'about'];
+    const updateActiveSection = () => {
+      let current = '';
+      const scrollPos = window.scrollY + 150;
+      sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if(section) {
+          const offsetTop = section.offsetTop;
+          const offsetBottom = offsetTop + section.offsetHeight;
+          if(scrollPos >= offsetTop && scrollPos < offsetBottom) {
+            current = sectionId;
+          }
         }
-      }
-    });
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.classList.remove('active');
-      const href = link.getAttribute('href').substring(1);
-      if(href === current) {
-        link.classList.add('active');
-      } else if(current === '' && window.scrollY < 100 && link.getAttribute('href') === '#home') {
-        link.classList.add('active');
-      }
-    });
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+        if(link.dataset.section === current) {
+          link.classList.add('active');
+        } else if(current === '' && window.scrollY < 100 && link.dataset.section === 'home') {
+          link.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', updateActiveSection);
+    updateActiveSection();
   });
-  
-  const homeLink = document.querySelector('.nav-links a[href="#home"]');
-  if (homeLink) homeLink.classList.add('active');
 </script>
 </body>
 </html>
