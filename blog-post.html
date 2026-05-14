@@ -10,6 +10,16 @@
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: 'Inter', sans-serif; background: #fefaf5; color:#2e241f; }
+    h1, h2, h3, .logo, .nav-links a { font-family: 'Playfair Display', serif; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+    .navbar { background: #ffffffdd; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1400px; margin: 0 auto; }
+    .logo { font-size: 1.8rem; font-weight: 700; color: #d48f2b; letter-spacing: -0.5px; text-decoration: none; }
+    .logo span { color: #5a3e2b; font-weight: 500; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 600; color: #3a2a20; transition: 0.2s; font-size: 1.05rem; }
+    .nav-links a:hover, .nav-links a.active { color: #d48f2b; }
+    .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #5a3e2b; }
     .blog-detail-container { max-width: 850px; margin: 60px auto; padding: 0 24px; }
     .back-home { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px; color:#d48f2b; text-decoration:none; font-weight:600; }
     .back-home:hover { text-decoration:underline; }
@@ -18,22 +28,98 @@
     h1 { font-size: 2.8rem; font-family: 'Playfair Display', serif; margin: 15px 0 20px; color:#5a3e2b; }
     .article-content { font-size: 1.1rem; line-height: 1.7; margin-top: 30px; color:#3b2d23; }
     .article-content p { margin-bottom: 1.5rem; }
-    .footer-small { background:#2e241f; color:#f3e1c0; padding: 30px 20px; text-align:center; margin-top:70px; border-radius: 24px 24px 0 0; }
+    .footer { background: #2e241f; color: #f3e1c0; padding: 50px 0 20px; margin-top: 70px; border-radius: 40px 40px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-size: 1.4rem; margin-bottom: 20px; color: #f8cf7a; font-family: 'Playfair Display', serif; }
+    .footer-col p, .footer-col ul { line-height: 1.7; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin: 10px 0; }
+    .footer-col ul li i { margin-right: 8px; color: #e6b422; }
+    .social-icons a { color: #f3e1c0; font-size: 1.5rem; margin-right: 18px; transition: 0.2s; display: inline-block; }
+    .social-icons a:hover { color: #e6b422; transform: translateY(-3px); }
+    .copyright { text-align: center; border-top: 1px solid #4b3628; padding-top: 24px; font-size: 0.9rem; }
     .brand-highlight { color:#e6b422; font-weight:700; }
+    @media (max-width:880px){
+      .nav-container { padding: 1rem 1.5rem; }
+      .logo { font-size: 1.4rem; }
+      .nav-links { position: fixed; top: 70px; left: -100%; background: #fffef7; width: 70%; height: 100vh; flex-direction: column; padding: 2rem; gap: 2rem; box-shadow: 5px 0 20px rgba(0,0,0,0.1); transition: 0.3s; border-radius: 0 32px 32px 0; z-index: 999; }
+      .nav-links.active { left: 0; }
+      .menu-icon { display: block; }
+      .container { padding: 0 20px; }
+    }
     @media (max-width:700px){ h1{font-size:2rem;} .blog-detail-container{margin:30px auto;} }
   </style>
 </head>
 <body>
+  <div class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="index.html">NASNA<span> Honey 🍯</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#menu">Honey Menu</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#blog" class="active">Blog</a></li>
+        <li><a href="documents.html">Documents</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="menu-icon" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </div>
+
   <div class="blog-detail-container">
     <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to NASNA Home</a>
     <div id="blogDetailContent">
       <div style="text-align:center; padding:60px;"><i class="fas fa-spinner fa-pulse"></i> Loading NASNA honey stories...</div>
     </div>
   </div>
-  <div class="footer-small">
-    <p>&copy; 2025 <span class="brand-highlight">NASNA Honey</span> — Sweetness from the hive, crafted with care.</p>
-  </div>
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>NASNA Honey</h4>
+          <p>Pure raw honey from sustainable hives. Sweetness & wellness since 2020.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="fas fa-chevron-right"></i> <a href="index.html#home" style="color:#f3e1c0; text-decoration:none;">Home</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="index.html#menu" style="color:#f3e1c0; text-decoration:none;">Shop Honeys</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="index.html#gallery" style="color:#f3e1c0; text-decoration:none;">Gallery</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="index.html#blog" style="color:#f3e1c0; text-decoration:none;">Blog</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="documents.html" style="color:#f3e1c0; text-decoration:none;">Documents</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> NASNA ENTERPRISES BARASATA SAKALPUR VARANASI UTTAR PRADESH Gajepur, Varanasi, Uttar Pradesh, 221403 Varanasi</li>
+            <li><i class="fas fa-phone-alt"></i> +91 9873162762</li>
+            <li><i class="fas fa-envelope"></i> nasnaenterprises@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 NASNA Enterprises.</p>
+      </div>
+    </div>
+  </footer>
   <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+
     // NASNA Blog Database - full articles for details page
     const postsDB = [
       { 

@@ -1,0 +1,427 @@
+<!-- FILE: documents.html (NASNA Documents Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>NASNA | Documents</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fefaf5;
+      color: #2e241f;
+    }
+
+    h1, h2, h3, .logo, .nav-links a, summary {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .navbar {
+      background: #ffffffdd;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #d48f2b;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #5a3e2b;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #3a2a20;
+      transition: 0.2s;
+      font-size: 1.05rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #d48f2b;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #5a3e2b;
+    }
+
+    .documents-hero {
+      background: linear-gradient(107deg, #ffeed9 0%, #fbe5c2 100%);
+      border-radius: 0 0 56px 56px;
+      padding: 58px 0 52px;
+      text-align: center;
+    }
+
+    .documents-hero h1 {
+      color: #b46f1a;
+      font-size: 3.2rem;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .documents-hero p {
+      color: #4f3a2c;
+      font-size: 1.08rem;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .documents-list {
+      display: grid;
+      gap: 20px;
+      padding: 52px 0 28px;
+    }
+
+    .document-panel {
+      background: #fff;
+      border-radius: 28px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+      overflow: hidden;
+      border: 1px solid rgba(230, 180, 34, 0.22);
+    }
+
+    .document-panel summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 24px 28px;
+      color: #5a3e2b;
+      font-size: 1.55rem;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .document-panel summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .document-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .document-title i {
+      color: #d48f2b;
+      font-size: 1.2rem;
+    }
+
+    .expand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #fff6df;
+      color: #b46f1a;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      transition: transform 0.25s ease;
+    }
+
+    .document-panel[open] .expand-icon {
+      transform: rotate(180deg);
+    }
+
+    .document-viewer {
+      border-top: 1px solid rgba(212, 143, 43, 0.2);
+      background: #fff8ef;
+      padding: 18px;
+    }
+
+    .document-viewer iframe {
+      width: 100%;
+      height: 720px;
+      display: block;
+      border: 0;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px rgba(90, 62, 43, 0.08);
+    }
+
+    .footer {
+      background: #2e241f;
+      color: #f3e1c0;
+      padding: 50px 0 20px;
+      margin-top: 44px;
+      border-radius: 40px 40px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #f8cf7a;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-col p, .footer-col ul {
+      line-height: 1.7;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin: 10px 0;
+    }
+
+    .footer-col ul li i {
+      margin-right: 8px;
+      color: #e6b422;
+    }
+
+    .footer a, .social-icons a {
+      color: #f3e1c0;
+      text-decoration: none;
+    }
+
+    .social-icons a {
+      font-size: 1.5rem;
+      margin-right: 18px;
+      transition: 0.2s;
+      display: inline-block;
+    }
+
+    .social-icons a:hover {
+      color: #e6b422;
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #4b3628;
+      padding-top: 24px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 880px) {
+      .nav-container {
+        padding: 1rem 1.5rem;
+      }
+
+      .logo {
+        font-size: 1.4rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: #fffef7;
+        width: 70%;
+        height: 100vh;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+        box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        border-radius: 0 32px 32px 0;
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .documents-hero {
+        padding: 42px 0 40px;
+      }
+
+      .documents-hero h1 {
+        font-size: 2.35rem;
+      }
+
+      .document-panel summary {
+        padding: 20px;
+        font-size: 1.25rem;
+      }
+
+      .document-viewer {
+        padding: 12px;
+      }
+
+      .document-viewer iframe {
+        height: 580px;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="index.html">NASNA<span> Honey 🍯</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#menu">Honey Menu</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="documents.html" class="active">Documents</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="menu-icon" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </div>
+
+  <section class="documents-hero">
+    <div class="container">
+      <h1>NASNA Enterprise Documents</h1>
+      <p>Review NASNA's quality, food safety, and business registration documents directly on this page.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="documents-list">
+      <details class="document-panel">
+        <summary>
+          <span class="document-title"><i class="fas fa-flask"></i> Honey Lab Test Report</span>
+          <span class="expand-icon"><i class="fas fa-chevron-down"></i></span>
+        </summary>
+        <div class="document-viewer">
+          <iframe src="images/Certificate/Nasna_honey_lab_report.pdf#toolbar=0&navpanes=0&scrollbar=1" title="Honey Lab Test Report"></iframe>
+        </div>
+      </details>
+
+      <details class="document-panel">
+        <summary>
+          <span class="document-title"><i class="fas fa-certificate"></i> FSSAI Certificate</span>
+          <span class="expand-icon"><i class="fas fa-chevron-down"></i></span>
+        </summary>
+        <div class="document-viewer">
+          <iframe src="images/Certificate/NASNA_FSSAI_Certificate.pdf#toolbar=0&navpanes=0&scrollbar=1" title="FSSAI Certificate"></iframe>
+        </div>
+      </details>
+
+      <details class="document-panel">
+        <summary>
+          <span class="document-title"><i class="fas fa-file-signature"></i> UDYAM Registration Document</span>
+          <span class="expand-icon"><i class="fas fa-chevron-down"></i></span>
+        </summary>
+        <div class="document-viewer">
+          <iframe src="images/Certificate/NASNA%20Enterprises%20MSME%20Certificate_Short.pdf#toolbar=0&navpanes=0&scrollbar=1" title="UDYAM Registration Document"></iframe>
+        </div>
+      </details>
+    </div>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>NASNA Honey</h4>
+          <p>Pure raw honey from sustainable hives. Sweetness & wellness since 2020.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="fas fa-chevron-right"></i> <a href="index.html#home">Home</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="index.html#menu">Shop Honeys</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="index.html#gallery">Gallery</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="index.html#blog">Blog</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="documents.html">Documents</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> NASNA ENTERPRISES BARASATA SAKALPUR VARANASI UTTAR PRADESH Gajepur, Varanasi, Uttar Pradesh, 221403 Varanasi</li>
+            <li><i class="fas fa-phone-alt"></i> +91 9873162762</li>
+            <li><i class="fas fa-envelope"></i> nasnaenterprises@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 NASNA Enterprises.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    }
+
+    document.querySelectorAll('.document-panel').forEach(panel => {
+      panel.addEventListener('toggle', () => {
+        if (!panel.open) return;
+        document.querySelectorAll('.document-panel').forEach(otherPanel => {
+          if (otherPanel !== panel) otherPanel.removeAttribute('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
