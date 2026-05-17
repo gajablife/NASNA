@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/documents",
+      "destination": "/documents.html"
+    },
+    {
+      "source": "/blog/urban-beekeeping-with-nasna",
+      "destination": "/blog-post.html"
+    },
+    {
+      "source": "/blog/honey-infused-meals-by-nasna",
+      "destination": "/blog-post.html"
+    },
+    {
+      "source": "/blog/raw-honey-vs-processed",
+      "destination": "/blog-post.html"
+    }
+  ]
+}
