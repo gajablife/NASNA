@@ -1,0 +1,212 @@
+<!-- FILE: about.html (NASNA About Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>About NASNA Enterprises | Pure Honey & Health-Focused Natural Products</title>
+  <meta name="description" content="Learn about NASNA Enterprises, a health-focused Indian brand serving pure raw honey, superfoods, hampers, and natural products with trust and care.">
+  <meta name="keywords" content="about NASNA, NASNA Enterprises, pure raw honey, natural products, superfoods India, honey hampers, corporate gifting">
+  <meta name="author" content="NASNA Enterprises">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nasna.in/about">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NASNA Enterprises">
+  <meta property="og:title" content="About NASNA Enterprises | Pure Honey & Natural Products">
+  <meta property="og:description" content="NASNA Enterprises exists to make purity easier to find, beginning with raw honey and growing into health-focused natural products.">
+  <meta property="og:url" content="https://nasna.in/about">
+  <meta property="og:image" content="https://nasna.in/images/logo600x600.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About NASNA Enterprises">
+  <meta name="twitter:description" content="A warm, health-focused Indian brand built around pure honey, natural products, and honest sourcing.">
+  <meta name="twitter:image" content="https://nasna.in/images/logo600x600.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About NASNA Enterprises",
+      "url": "https://nasna.in/about",
+      "description": "NASNA Enterprises is a health-focused natural products brand serving pure raw honey, superfoods, hampers, and gifting solutions.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "NASNA Enterprises",
+        "url": "https://nasna.in/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nasna.in/images/logo600x600.png"
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fefaf5; color: #2e241f; }
+    h1, h2, h3, .logo, .nav-links a, .btn { font-family: 'Playfair Display', serif; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+    .navbar { background: #ffffffdd; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1400px; margin: 0 auto; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; font-size: 1.8rem; font-weight: 700; color: #d48f2b; letter-spacing: -0.5px; text-decoration: none; transition: font-size 0.25s ease; }
+    .logo span { color: #5a3e2b; font-weight: 500; }
+    .brand-name { color: #d48f2b; }
+    .brand-name span { color: #5a3e2b; }
+    .brand-mark { width: 0; height: 0; border-radius: 50%; opacity: 0; object-fit: cover; transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 600; color: #3a2a20; transition: 0.2s; font-size: 1.05rem; }
+    .nav-links a:hover, .nav-links a.active { color: #d48f2b; }
+    .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #5a3e2b; }
+
+    .about-hero { background: linear-gradient(107deg, #ffeed9 0%, #fbe5c2 100%); border-radius: 0 0 56px 56px; padding: 64px 0 58px; }
+    .about-hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 42px; align-items: center; }
+    .eyebrow { color: #d48f2b; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; font-size: 0.78rem; margin-bottom: 12px; }
+    .about-hero h1 { color: #b46f1a; font-size: 3.4rem; line-height: 1.08; margin-bottom: 18px; }
+    .about-hero p { color: #4f3a2c; font-size: 1.12rem; line-height: 1.65; max-width: 660px; }
+    .hero-quote { margin-top: 24px; color: #3b2d23; font-weight: 800; font-size: 1.12rem; }
+    .hero-logo-wrap { display: flex; justify-content: center; }
+    .hero-logo-wrap img { width: min(100%, 310px); border-radius: 50%; filter: drop-shadow(14px 18px 28px rgba(90,62,43,0.16)); }
+
+    .about-sections { display: grid; gap: 26px; padding: 56px 0 20px; }
+    .about-section-card { background: #fff; border-radius: 28px; border: 1px solid rgba(230,180,34,0.22); box-shadow: 0 12px 28px rgba(0,0,0,0.05); padding: 30px; }
+    .about-section-card h2 { color: #5a3e2b; font-size: 2rem; margin-bottom: 12px; }
+    .about-section-card p { color: #4f3a2c; line-height: 1.75; margin-top: 12px; }
+    .punch-line { display: inline-flex; align-items: center; gap: 10px; color: #b46f1a; background: #fff6df; border-radius: 999px; padding: 9px 14px; font-weight: 800; margin-bottom: 14px; }
+    .mission-grid, .offer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
+    .mini-panel { background: #fff8ef; border-radius: 20px; padding: 20px; border: 1px solid rgba(212,143,43,0.18); }
+    .mini-panel h3 { color: #b46f1a; font-size: 1.28rem; margin-bottom: 8px; }
+    .mini-panel ul { list-style: none; display: grid; gap: 10px; color: #4f3a2c; line-height: 1.5; }
+    .mini-panel li i { color: #d48f2b; margin-right: 8px; }
+    .cta-band { background: #2e241f; color: #f3e1c0; border-radius: 32px; padding: 36px; margin: 32px 0 10px; display: grid; grid-template-columns: 1.4fr auto; gap: 24px; align-items: center; }
+    .cta-band h2 { color: #f8cf7a; font-size: 2rem; margin-bottom: 10px; }
+    .cta-band p { color: #f3e1c0; line-height: 1.65; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #e6b422; color: #2e241f; padding: 13px 24px; border-radius: 40px; font-weight: 800; text-decoration: none; white-space: nowrap; transition: 0.25s ease; }
+    .btn:hover { background: #c9901e; transform: translateY(-3px); }
+
+    .footer { background: #2e241f; color: #f3e1c0; padding: 50px 0 20px; margin-top: 60px; border-radius: 40px 40px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-size: 1.4rem; margin-bottom: 20px; color: #f8cf7a; }
+    .footer-col p, .footer-col ul { line-height: 1.7; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin: 10px 0; }
+    .footer-col ul li i { margin-right: 8px; color: #e6b422; }
+    .social-icons a { color: #f3e1c0; font-size: 1.5rem; margin-right: 18px; transition: 0.2s; display: inline-block; }
+    .social-icons a:hover { color: #e6b422; transform: translateY(-3px); }
+    .copyright { text-align: center; border-top: 1px solid #4b3628; padding-top: 24px; font-size: 0.9rem; }
+
+    @media (max-width: 880px) {
+      #siteHeader { min-height: 88px; }
+      .navbar { position: fixed; top: 0; left: 0; right: 0; width: 100%; transition: box-shadow 0.25s ease, background 0.25s ease; }
+      .nav-container { min-height: 88px; padding: 1rem 1.5rem; transition: min-height 0.25s ease, padding 0.25s ease; }
+      .logo { font-size: 1.4rem; }
+      .navbar.is-scrolled { background: #fffffff2; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      .navbar.is-scrolled .nav-container { min-height: 64px; padding: 0.55rem 1.25rem; }
+      .navbar.is-scrolled .logo { font-size: 1.12rem; }
+      .navbar.is-scrolled .brand-mark { width: 36px; height: 36px; opacity: 1; }
+      .navbar.is-scrolled .brand-name span { font-size: 0.95rem; }
+      .nav-links { position: fixed; top: 88px; left: -100%; background: #fffef7; width: 70%; height: 100vh; flex-direction: column; padding: 2rem; gap: 2rem; box-shadow: 5px 0 20px rgba(0,0,0,0.1); transition: 0.3s; border-radius: 0 32px 32px 0; z-index: 999; }
+      .navbar.is-scrolled .nav-links { top: 64px; }
+      .nav-links.active { left: 0; }
+      .menu-icon { display: block; }
+      .container { padding: 0 20px; }
+      .about-hero { padding: 42px 0 38px; }
+      .about-hero-grid { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+      .about-hero h1 { font-size: 2.45rem; }
+      .about-hero p { margin: 0 auto; font-size: 1rem; }
+      .hero-logo-wrap { order: -1; }
+      .hero-logo-wrap img { width: 190px; }
+      .about-section-card { padding: 24px; border-radius: 24px; }
+      .about-section-card h2 { font-size: 1.65rem; }
+      .mission-grid, .offer-grid, .cta-band { grid-template-columns: 1fr; }
+      .cta-band { text-align: center; padding: 28px 22px; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body data-page="about">
+  <div id="siteHeader"></div>
+
+  <section class="about-hero">
+    <div class="container about-hero-grid">
+      <div>
+        <div class="eyebrow">About NASNA Enterprises</div>
+        <h1>Naturally Sustainable Naturally Authentic.</h1>
+        <p>NASNA exists for people who do not want to compromise on purity. We begin with raw honey and are growing into a trusted natural products brand built around health, transparency, and everyday wellness.</p>
+        <div class="hero-quote">"When purity becomes a habit, health becomes a lifestyle."</div>
+      </div>
+      <div class="hero-logo-wrap">
+        <img src="/images/logo600x600.png" alt="NASNA Raw Honey logo">
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="about-sections">
+      <section class="about-section-card">
+        <div class="punch-line"><i class="fas fa-seedling"></i> "Rooted in purity, made for real families."</div>
+        <h2>Who We Are</h2>
+        <p>NASNA Enterprises is a health-focused brand serving pure raw honey and carefully selected natural products for families, wellness seekers, gifting buyers, and businesses that value quality. We are not here to look like another packaged food company. We are here to make honest, pure products easier to trust, easier to choose, and easier to bring into daily life.</p>
+        <p>Our promise is simple: products that feel close to nature, taste authentic, and support a healthier way of living.</p>
+      </section>
+
+      <section class="about-section-card">
+        <div class="punch-line"><i class="fas fa-heart"></i> "The journey started with one question: where is the pure honey?"</div>
+        <h2>Our Story / Origin</h2>
+        <p>Honey has always been known as a natural source of nourishment. It is used in homes for energy, immunity, digestion, and everyday wellness. But finding truly pure raw honey became a challenge. Many people wanted honey they could trust, yet the market was crowded with over-processed, diluted, or unclear products.</p>
+        <p>NASNA was born from that gap. We saw a simple problem: health-conscious people were searching for purity, but purity was not always easy to identify. Our journey began with honey because honey represents what we believe in: nature, care, patience, and honesty.</p>
+        <p>From that beginning, NASNA is building a wider health-first product family, with the same standard at the center: serve what we would confidently bring to our own table.</p>
+      </section>
+
+      <section class="about-section-card">
+        <div class="punch-line"><i class="fas fa-bullseye"></i> "Good health should not be complicated."</div>
+        <h2>Our Mission & Vision</h2>
+        <div class="mission-grid">
+          <div class="mini-panel">
+            <h3>Our Mission</h3>
+            <p>To serve maximum pure products that help people make healthier daily choices, beginning with raw honey and expanding into natural foods, superfoods, and thoughtful wellness gifting.</p>
+          </div>
+          <div class="mini-panel">
+            <h3>Our Vision</h3>
+            <p>To make NASNA a trusted name for purity, health, and honest Indian enterprise, where every product supports better living and every customer feels confident about what they consume.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section-card">
+        <div class="punch-line"><i class="fas fa-gift"></i> "Pure products for homes, teams, and meaningful gifting."</div>
+        <h2>What We Offer / What We Do</h2>
+        <p>NASNA is growing from a pure honey brand into a natural products and gifting brand that serves both individual customers and organizations.</p>
+        <div class="offer-grid">
+          <div class="mini-panel">
+            <h3>Pure Honey</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Wildflower Honey</li>
+              <li><i class="fas fa-check"></i> Fennel Honey</li>
+              <li><i class="fas fa-check"></i> Multi Floral Honey</li>
+            </ul>
+          </div>
+          <div class="mini-panel">
+            <h3>Natural Products & Gifting</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Health-focused superfoods</li>
+              <li><i class="fas fa-check"></i> Custom hampers and festive gifting</li>
+              <li><i class="fas fa-check"></i> Corporate gifting and bulk orders</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="cta-band">
+      <div>
+        <h2>Ready to choose purity with confidence?</h2>
+        <p>Explore NASNA products, place an order on WhatsApp, or connect with us for hampers, corporate gifting, and product enquiries. Let us make health a little simpler, one pure product at a time.</p>
+      </div>
+      <a class="btn" href="/index.html#menu"><i class="fas fa-jar"></i> Explore Products</a>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+  <script src="/includes.js"></script>
+</body>
+</html>
