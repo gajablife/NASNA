@@ -4,9 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>NASNA | Documents</title>
+  <title>NASNA Documents | FSSAI, UDYAM & Honey Lab Report</title>
+  <meta name="description" content="View NASNA Enterprises documents, including honey lab test report, FSSAI number, and UDYAM registration details.">
+  <meta name="keywords" content="NASNA documents, NASNA FSSAI, NASNA UDYAM, honey lab test report, NASNA Enterprises certificate">
+  <meta name="author" content="NASNA Enterprises">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nasna.in/documents">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NASNA Enterprises">
+  <meta property="og:title" content="NASNA Documents | FSSAI, UDYAM & Honey Lab Report">
+  <meta property="og:description" content="Review NASNA Enterprises quality, food safety, and business registration documents.">
+  <meta property="og:url" content="https://nasna.in/documents">
+  <meta property="og:image" content="https://nasna.in/images/logo600x600.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NASNA Documents | FSSAI, UDYAM & Honey Lab Report">
+  <meta name="twitter:description" content="View NASNA Enterprises document details and honey lab test report.">
+  <meta name="twitter:image" content="https://nasna.in/images/logo600x600.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "NASNA Enterprise Documents",
+      "url": "https://nasna.in/documents",
+      "description": "NASNA Enterprises document page with honey lab test report, FSSAI number, and UDYAM registration details.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "NASNA Enterprises",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nasna.in/images/logo600x600.png"
+        }
+      }
+    }
+  </script>
   <style>
     * {
       margin: 0;
@@ -204,6 +236,38 @@
       box-shadow: inset 0 0 0 1px rgba(90, 62, 43, 0.08);
     }
 
+    .document-details {
+      border-top: 1px solid rgba(212, 143, 43, 0.2);
+      background: #fff8ef;
+      padding: 28px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .document-detail-row {
+      background: #fff;
+      border: 1px solid rgba(230, 180, 34, 0.22);
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.03);
+    }
+
+    .document-detail-row span {
+      display: block;
+      color: #8b612f;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .document-detail-row strong {
+      color: #3b2d23;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+    }
+
     .footer {
       background: #2e241f;
       color: #f3e1c0;
@@ -398,8 +462,15 @@
           <span class="document-title"><i class="fas fa-certificate"></i> FSSAI Certificate</span>
           <span class="expand-icon"><i class="fas fa-chevron-down"></i></span>
         </summary>
-        <div class="document-viewer">
-          <iframe src="images/Certificate/NASNA_FSSAI_Certificate.pdf#toolbar=0&navpanes=0&scrollbar=1" title="FSSAI Certificate"></iframe>
+        <div class="document-details">
+          <div class="document-detail-row">
+            <span>Brand Name</span>
+            <strong>NASNA ENTERPRISES</strong>
+          </div>
+          <div class="document-detail-row">
+            <span>FSSAI Number</span>
+            <strong>22726417000057</strong>
+          </div>
         </div>
       </details>
 
@@ -408,8 +479,15 @@
           <span class="document-title"><i class="fas fa-file-signature"></i> UDYAM Registration Document</span>
           <span class="expand-icon"><i class="fas fa-chevron-down"></i></span>
         </summary>
-        <div class="document-viewer">
-          <iframe src="images/Certificate/NASNA%20Enterprises%20MSME%20Certificate_Short.pdf#toolbar=0&navpanes=0&scrollbar=1" title="UDYAM Registration Document"></iframe>
+        <div class="document-details">
+          <div class="document-detail-row">
+            <span>Name</span>
+            <strong>NASNA ENTERPRISES</strong>
+          </div>
+          <div class="document-detail-row">
+            <span>Registration Number</span>
+            <strong>UDYAM-UP-75-0129119</strong>
+          </div>
         </div>
       </details>
     </div>
@@ -417,7 +495,7 @@
 
   <div id="siteFooter"></div>
 
-  <script src="includes.js"></script>
+  <script src="/includes.js"></script>
   <script>
     document.querySelectorAll('.document-panel').forEach(panel => {
       panel.addEventListener('toggle', () => {

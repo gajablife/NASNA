@@ -11,8 +11,8 @@
   };
 
   await Promise.all([
-    loadInclude('#siteHeader', 'header.html'),
-    loadInclude('#siteFooter', 'footer.html')
+    loadInclude('#siteHeader', '/header.html'),
+    loadInclude('#siteFooter', '/footer.html')
   ]);
 
   const navLinks = document.getElementById('navLinks');

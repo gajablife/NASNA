@@ -4,7 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NASNA - Blog Article | Pure Honey Stories</title>
+  <title>NASNA Pure Honey Stories | Raw Honey, Recipes & Beekeeping</title>
+  <meta name="description" content="Read NASNA Pure Honey Stories about raw honey, beekeeping, wellness, and honey-infused recipes.">
+  <meta name="keywords" content="NASNA blog, honey stories, raw honey benefits, beekeeping tips, honey recipes, NASNA Enterprises">
+  <meta name="author" content="NASNA Enterprises">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nasna.in/blog">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="NASNA Enterprises">
+  <meta property="og:title" content="NASNA Pure Honey Stories">
+  <meta property="og:description" content="Raw honey, beekeeping, wellness, and honey recipe stories from NASNA Enterprises.">
+  <meta property="og:url" content="https://nasna.in/blog">
+  <meta property="og:image" content="https://nasna.in/images/logo600x600.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NASNA Pure Honey Stories">
+  <meta name="twitter:description" content="Read raw honey, beekeeping, wellness, and recipe stories from NASNA Enterprises.">
+  <meta name="twitter:image" content="https://nasna.in/images/logo600x600.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -65,34 +80,40 @@
   <div id="siteHeader"></div>
 
   <div class="blog-detail-container">
-    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to NASNA Home</a>
+    <a href="/index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to NASNA Home</a>
     <div id="blogDetailContent">
       <div style="text-align:center; padding:60px;"><i class="fas fa-spinner fa-pulse"></i> Loading NASNA honey stories...</div>
     </div>
   </div>
   <div id="siteFooter"></div>
-  <script src="includes.js"></script>
+  <script src="/includes.js"></script>
   <script>
     // NASNA Blog Database - full articles for details page
     const postsDB = [
       { 
         id: 1, 
+        slug: "urban-beekeeping-with-nasna",
         category: "BEEKEEPING", 
         title: "How to Start Urban Beekeeping with NASNA", 
+        metaDescription: "Learn practical urban beekeeping tips from NASNA, from equipment and mentorship to water sources and pollinator-friendly plants.",
         fullContent: "Urban beekeeping is on the rise. With the right equipment — a flow hive or traditional Langstroth — and a small balcony or rooftop, anyone can become a beekeeper. NASNA recommends starting with a mentor, checking local regulations, providing a water source, and planting pollinator-friendly flowers. Start small, join a local beekeeping club, and soon you'll be harvesting your own liquid gold! At NASNA, we offer starter kits and guidance for aspiring beekeepers. Our mission is to bring back the bees to every neighborhood.",
         img: "https://placehold.co/800x450/FFE5C4/AC744B?text=NASNA+Beekeeping+Tips"
       },
       { 
         id: 2, 
+        slug: "honey-infused-meals-by-nasna",
         category: "RECIPES", 
         title: "5 Wholesome Honey-Infused Meals by NASNA", 
+        metaDescription: "Discover wholesome honey-infused recipe ideas using NASNA raw honey, from glazed dishes to refreshing drinks and breakfast pairings.",
         fullContent: "Honey isn't just a sweetener — it's a star ingredient! Try Honey-Sriracha Glazed Chicken, a classic Honey Oat Bread, or a refreshing Honey Lemonade with mint. For breakfast, spread NASNA whipped honey on toast, or add a drizzle to Greek yogurt with walnuts. Each dish highlights the nuanced flavors of raw honey and its natural antioxidants. NASNA's raw honey varieties bring unique floral notes that elevate any recipe. Stay tuned for more exclusive recipes from our kitchen to yours!",
         img: "https://placehold.co/800x450/F5DDAA/B97F42?text=NASNA+Honey+Recipes"
       },
       { 
         id: 3, 
+        slug: "raw-honey-vs-processed",
         category: "WELLNESS", 
         title: "Raw Honey vs Processed: NASNA's Guide", 
+        metaDescription: "Understand the difference between raw honey and processed honey, and why NASNA raw honey keeps natural enzymes and antioxidants intact.",
         fullContent: "Raw honey contains natural enzymes, pollen, and compounds like hydrogen peroxide that aid digestion and support immunity. Processed honey is often heated and filtered, destroying beneficial nutrients. While both are sweet, raw honey offers anti-inflammatory properties and can soothe sore throats. Choose NASNA raw, local honey for the ultimate wellness boost. Our unfiltered honey retains all the goodness nature intended. Experience the NASNA difference — pure, potent, and packed with health benefits.",
         img: "https://placehold.co/800x450/EED6B0/996F45?text=NASNA+Health+Tips"
       }
@@ -100,10 +121,54 @@
     
     const urlParams = new URLSearchParams(window.location.search);
     const postId = parseInt(urlParams.get('id'));
-    const post = postsDB.find(p => p.id === postId);
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const slug = pathParts.length ? pathParts[pathParts.length - 1].replace('.html', '') : '';
+    const post = postsDB.find(p => p.id === postId || p.slug === slug);
     const container = document.getElementById('blogDetailContent');
+
+    function upsertMeta(selector, createTag, attributes) {
+      let element = document.head.querySelector(selector);
+      if (!element) {
+        element = document.createElement(createTag);
+        document.head.appendChild(element);
+      }
+      Object.entries(attributes).forEach(([key, value]) => element.setAttribute(key, value));
+    }
+
+    function applyPostSeo(post) {
+      const canonicalUrl = `https://nasna.in/blog/${post.slug}`;
+      document.title = `${post.title} | NASNA Pure Honey Stories`;
+      upsertMeta('meta[name="description"]', 'meta', { name: 'description', content: post.metaDescription });
+      upsertMeta('link[rel="canonical"]', 'link', { rel: 'canonical', href: canonicalUrl });
+      upsertMeta('meta[property="og:title"]', 'meta', { property: 'og:title', content: post.title });
+      upsertMeta('meta[property="og:description"]', 'meta', { property: 'og:description', content: post.metaDescription });
+      upsertMeta('meta[property="og:url"]', 'meta', { property: 'og:url', content: canonicalUrl });
+      upsertMeta('meta[property="og:image"]', 'meta', { property: 'og:image', content: post.img });
+      upsertMeta('meta[name="twitter:title"]', 'meta', { name: 'twitter:title', content: post.title });
+      upsertMeta('meta[name="twitter:description"]', 'meta', { name: 'twitter:description', content: post.metaDescription });
+      upsertMeta('meta[name="twitter:image"]', 'meta', { name: 'twitter:image', content: post.img });
+
+      const articleSchema = document.createElement('script');
+      articleSchema.type = 'application/ld+json';
+      articleSchema.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post.title,
+        description: post.metaDescription,
+        image: post.img,
+        url: canonicalUrl,
+        author: { '@type': 'Organization', name: 'NASNA Enterprises' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'NASNA Enterprises',
+          logo: { '@type': 'ImageObject', url: 'https://nasna.in/images/logo600x600.png' }
+        }
+      });
+      document.head.appendChild(articleSchema);
+    }
     
     if(post) {
+      applyPostSeo(post);
       container.innerHTML = `
         <img src="${post.img}" alt="${post.title}" class="article-img">
         <div class="blog-category">${post.category}</div>
@@ -112,14 +177,14 @@
           <p>${post.fullContent}</p>
           <p>At NASNA, we believe in sharing authentic knowledge. This article reflects our passion for pure honey and sustainable apiculture. We hope you enjoyed this read — and remember to always choose raw, ethically sourced honey for both flavor and wellness.</p>
           <p style="margin-top:30px; font-style:italic;"><i class="fas fa-jar"></i> — The NASNA Honey Team</p>
-          <p style="margin-top:20px;"><a href="index.html" style="color:#d48f2b; font-weight:600;">← Explore more NASNA products</a></p>
+          <p style="margin-top:20px;"><a href="/index.html" style="color:#d48f2b; font-weight:600;">← Explore more NASNA products</a></p>
         </div>
       `;
     } else {
       container.innerHTML = `
         <div style="text-align:center; padding:60px;">
           <h2>Oops! 🍯</h2>
-          <p>This honey story seems to be missing. Go back to the <a href="index.html" style="color:#d48f2b;">NASNA homepage</a>.</p>
+          <p>This honey story seems to be missing. Go back to the <a href="/index.html" style="color:#d48f2b;">NASNA homepage</a>.</p>
         </div>
       `;
     }
