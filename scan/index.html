@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ============================================================== -->
+  <!-- TO CHANGE WHERE THE QR CODE GOES, UPDATE THE URL BELOW         -->
+  <!-- ============================================================== -->
+  
+  <!-- 1. Meta Refresh Fallback (In case JavaScript is disabled) -->
+  <meta http-equiv="refresh" content="0; url=https://nasna.in/ajwain-honey">
+  
+  <title>Redirecting to NASNA...</title>
+  
+  <script>
+    // 2. JavaScript Redirect (Faster and more reliable)
+    // Just change this link next month to "/offer" or your instagram link!
+    const REDIRECT_URL = "https://nasna.in/ajwain-honey";
+    
+    // Redirect immediately without keeping this page in the browser history
+    window.location.replace(REDIRECT_URL);
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fefaf5;
+      color: #5a3e2b;
+      text-align: center;
+      margin: 0;
+    }
+    a {
+      color: #d48f2b;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h2>Loading NASNA... 🍯</h2>
+    <p>If you are not redirected automatically, <a href="https://nasna.in/ajwain-honey" id="fallback-link">click here</a>.</p>
+  </div>
+  
+  <script>
+    // Keep the fallback link in sync with the REDIRECT_URL automatically
+    document.getElementById('fallback-link').href = REDIRECT_URL;
+  </script>
+</body>
+</html>
