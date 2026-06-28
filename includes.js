@@ -57,7 +57,9 @@
       if (!href) return;
 
       const url = new URL(href, window.location.href);
-      const samePage = url.pathname === window.location.pathname || url.pathname.endsWith('/index.html') && isHomePage;
+      const targetIsHome = url.pathname === '/' || url.pathname.endsWith('/index.html');
+      const currentIsHome = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html');
+      const samePage = url.pathname === window.location.pathname || (targetIsHome && currentIsHome && isHomePage);
       const targetId = url.hash;
 
       if (samePage && targetId) {
