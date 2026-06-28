@@ -52,6 +52,10 @@
     h1 { font-size: 2.8rem; font-family: 'Playfair Display', serif; margin: 15px 0 20px; color:#5a3e2b; }
     .article-content { font-size: 1.1rem; line-height: 1.7; margin-top: 30px; color:#3b2d23; }
     .article-content p { margin-bottom: 1.5rem; }
+    .article-points { display: grid; gap: 16px; margin: 10px 0 28px; }
+    .article-point { background: #fff8ef; border: 1px solid rgba(212, 143, 43, 0.18); border-radius: 18px; padding: 18px 20px; }
+    .article-point h3 { color: #b46f1a; font-size: 1.22rem; margin-bottom: 8px; }
+    .article-point p { margin-bottom: 0; }
     .footer { background: #2e241f; color: #f3e1c0; padding: 50px 0 20px; margin-top: 70px; border-radius: 40px 40px 0 0; }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
     .footer-col h4 { font-size: 1.4rem; margin-bottom: 20px; color: #f8cf7a; font-family: 'Playfair Display', serif; }
@@ -109,8 +113,31 @@
         slug: "honey-infused-meals-by-nasna",
         category: "RECIPES", 
         title: "5 Wholesome Honey-Infused Meals by NASNA", 
-        metaDescription: "Explore five vegetarian honey-infused meal ideas using NASNA raw honey, with simple wellness benefits for energy, digestion, and daily nourishment.",
-        fullContent: "Honey can bring natural sweetness, balance, and nourishment to everyday vegetarian meals. Start your morning with Honey Oats Porridge topped with fruits and nuts; it gives slow energy, supports digestion, and keeps breakfast light yet filling. For a quick snack, try Honey Yogurt Fruit Bowl with seasonal fruits, curd, seeds, and a gentle drizzle of NASNA raw honey; it supports gut health and adds natural antioxidants. At lunch, Honey Lemon Sprout Salad brings together sprouts, cucumber, lemon, herbs, and honey for a fresh bowl rich in plant protein, fiber, and immunity-supporting nutrients. For a comforting meal, Honey Glazed Carrots and Sweet Potatoes make a warm vegetarian side packed with beta-carotene, minerals, and clean energy. End the day with Honey Turmeric Milk, a soothing drink that combines honey, turmeric, and warm milk to support recovery, throat comfort, and restful sleep. With NASNA raw honey, every vegetarian recipe becomes more than sweet - it becomes a small daily step toward better health.",
+        metaDescription: "Explore five honey-infused meal ideas using NASNA raw honey, with simple wellness benefits for energy, digestion, and daily nourishment.",
+        intro: "Honey can bring natural sweetness, balance, and nourishment to everyday meals. With NASNA raw honey, simple food becomes more flavourful and more mindful.",
+        points: [
+          {
+            title: "1. Honey Oats Porridge",
+            text: "A warm bowl of oats topped with fruits, nuts, and a gentle drizzle of NASNA honey gives slow energy, supports digestion, and keeps breakfast light yet filling."
+          },
+          {
+            title: "2. Honey Yogurt Fruit Bowl",
+            text: "Curd, seasonal fruits, seeds, and raw honey make a refreshing snack that supports gut health, adds natural antioxidants, and satisfies sweet cravings without heaviness."
+          },
+          {
+            title: "3. Honey Lemon Sprout Salad",
+            text: "Sprouts, cucumber, lemon, herbs, and honey create a fresh bowl rich in plant protein, fiber, and immunity-supporting nutrients."
+          },
+          {
+            title: "4. Honey Glazed Carrots and Sweet Potatoes",
+            text: "A comforting plate with natural sweetness, beta-carotene, minerals, and clean energy. It works beautifully as a light meal or nourishing side."
+          },
+          {
+            title: "5. Honey Turmeric Milk",
+            text: "Warm milk with turmeric and honey is a soothing evening drink that supports recovery, throat comfort, and restful sleep."
+          }
+        ],
+        conclusion: "Every spoon of NASNA raw honey adds more than sweetness. It brings a small daily step toward better health, better taste, and better choices.",
         img: "https://placehold.co/800x450/F5DDAA/B97F42?text=NASNA+Honey+Recipes"
       },
       { 
@@ -174,12 +201,25 @@
     
     if(post) {
       applyPostSeo(post);
+      const articleBody = post.points ? `
+          <p>${post.intro}</p>
+          <div class="article-points">
+            ${post.points.map(point => `
+              <div class="article-point">
+                <h3>${point.title}</h3>
+                <p>${point.text}</p>
+              </div>
+            `).join('')}
+          </div>
+          <p>${post.conclusion}</p>
+        ` : `<p>${post.fullContent}</p>`;
+
       container.innerHTML = `
         <img src="${post.img}" alt="${post.title}" class="article-img">
         <div class="blog-category">${post.category}</div>
         <h1>${post.title}</h1>
         <div class="article-content">
-          <p>${post.fullContent}</p>
+          ${articleBody}
           <p>At NASNA, we believe in sharing authentic knowledge. This article reflects our passion for pure honey and sustainable apiculture. We hope you enjoyed this read — and remember to always choose raw, ethically sourced honey for both flavor and wellness.</p>
           <p style="margin-top:30px; font-style:italic;"><i class="fas fa-jar"></i> — The NASNA Honey Team</p>
           <p style="margin-top:20px;"><a href="/index.html" style="color:#d48f2b; font-weight:600;">← Explore more NASNA products</a></p>
