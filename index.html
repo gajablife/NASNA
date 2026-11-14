@@ -60,86 +60,89 @@
   </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background-color: #fefaf5; color: #2e241f; scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: #f4faf4; color: #1a2e1a; scroll-behavior: smooth; }
     h1, h2, h3, .logo, .nav-links a, .btn { font-family: 'Playfair Display', serif; }
     .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
     #siteHeader { min-height: 82px; }
-    .navbar { background: #ffffffdd; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; transition: box-shadow 0.25s ease, background 0.25s ease; }
+    .navbar { background: #ffffffee; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(39,98,39,0.06); position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; transition: box-shadow 0.25s ease, background 0.25s ease; }
     .nav-container { display: flex; justify-content: space-between; align-items: center; min-height: 82px; padding: 1rem 2rem; max-width: 1400px; margin: 0 auto; transition: min-height 0.25s ease, padding 0.25s ease; }
-    .logo { display: inline-flex; align-items: center; gap: 10px; font-size: 1.8rem; font-weight: 700; color: #d48f2b; letter-spacing: -0.5px; text-decoration: none; transition: font-size 0.25s ease; }
-    .logo span { color: #5a3e2b; font-weight: 500; }
-    .brand-name { color: #d48f2b; }
-    .brand-name span { color: #5a3e2b; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; font-size: 1.8rem; font-weight: 700; color: #276227; letter-spacing: -0.5px; text-decoration: none; transition: font-size 0.25s ease; }
+    .logo span { color: #3d7a3d; font-weight: 500; }
+    .brand-name { color: #276227; }
+    .brand-name span { color: #3d7a3d; }
     .brand-mark { width: 0; height: 0; border-radius: 50%; opacity: 0; object-fit: cover; transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease; }
-    .navbar.is-scrolled { background: #fffffff2; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .navbar.is-scrolled { background: #fffffff2; box-shadow: 0 8px 24px rgba(39,98,39,0.1); }
     .navbar.is-scrolled .nav-container { min-height: 64px; padding: 0.55rem 2rem; }
     .navbar.is-scrolled .logo { font-size: 1.3rem; }
     .navbar.is-scrolled .brand-mark { width: 38px; height: 38px; opacity: 1; }
     .navbar.is-scrolled .brand-name span { font-size: 1.08rem; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { text-decoration: none; font-weight: 600; color: #3a2a20; transition: 0.2s; font-size: 1.05rem; }
-    .nav-links a:hover, .nav-links a.active { color: #d48f2b; }
-    .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #5a3e2b; }
+    .nav-links a { text-decoration: none; font-weight: 600; color: #1e3d1e; transition: 0.2s; font-size: 1.05rem; }
+    .nav-links a:hover, .nav-links a.active { color: #276227; }
+    .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #276227; }
 
-    .btn { display: inline-block; background: #e6b422; color: #2e241f; padding: 12px 28px; border-radius: 40px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: none; cursor: pointer; }
-    .btn-dark { background: #5a3e2b; color: white; }
-    .btn:hover { background: #c9901e; transform: translateY(-3px); box-shadow: 0 12px 20px rgba(0,0,0,0.1); }
+    .btn { display: inline-block; background: #276227; color: #ffffff; padding: 12px 28px; border-radius: 40px; font-weight: 700; text-decoration: none; transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(39,98,39,0.25); border: none; cursor: pointer; }
+    .btn-dark { background: #1a3d1a; color: white; }
+    .btn:hover { background: #1e4e1e; transform: translateY(-3px); box-shadow: 0 12px 24px rgba(39,98,39,0.3); }
 
-    .banner { background: linear-gradient(107deg, #ffeed9 0%, #fbe5c2 100%); border-radius: 0 0 60px 60px; margin-bottom: 20px; }
+    .banner { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 60%, #a5d6a7 100%); border-radius: 0 0 60px 60px; margin-bottom: 20px; position: relative; overflow: hidden; }
+    .banner::before { content: ''; position: absolute; top: -40px; right: -60px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(76,175,80,0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
     .banner-grid { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 60px 0 40px; }
     .banner-text { flex: 1; min-width: 280px; }
-    .banner-text h1 { font-size: 3.6rem; font-weight: 800; color: #b46f1a; line-height: 1.2; }
-    .banner-text h3 { color: #2e241f; margin-top: 12px; }
-    .banner-text p { font-size: 1.2rem; margin: 20px 0; color: #4f3a2c; }
+    .banner-text h1 { font-size: 3.6rem; font-weight: 800; color: #1b4d1b; line-height: 1.2; }
+    .banner-text h3 { color: #2e5c2e; margin-top: 12px; }
+    .banner-text p { font-size: 1.2rem; margin: 20px 0; color: #2e4a2e; }
     .banner-img { flex: 0.9; text-align: center; }
-    .banner-img img { max-width: 100%; filter: drop-shadow(12px 12px 20px rgba(0,0,0,0.1)); border-radius: 40px; }
+    .banner-img img { max-width: 100%; filter: drop-shadow(12px 12px 20px rgba(39,98,39,0.18)); border-radius: 40px; }
 
-    .section-heading { text-align: center; font-size: 2.6rem; font-weight: 700; margin: 60px 0 30px; position: relative; color: #5a3e2b; }
-    .section-heading:after { content: ''; display: block; width: 80px; height: 4px; background: #e6b422; margin: 12px auto 0; border-radius: 4px; }
+    .section-heading { text-align: center; font-size: 2.6rem; font-weight: 700; margin: 60px 0 30px; position: relative; color: #1b4d1b; }
+    .section-heading:after { content: ''; display: block; width: 80px; height: 4px; background: #4caf50; margin: 12px auto 0; border-radius: 4px; }
 
     .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2rem; }
-    .menu-card { background: white; border-radius: 32px; overflow: hidden; box-shadow: 0 12px 28px rgba(0,0,0,0.05); transition: all 0.3s; text-align: center; padding: 24px 16px 28px; }
-    .menu-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.1); }
-    .menu-icon { font-size: 3.5rem; color: #e6b422; }
-    .menu-card h3 { margin: 16px 0 8px; font-size: 1.7rem; }
-    .menu-card p { color: #6b4f3a; margin: 12px 0; }
-    .price { display: block; font-weight: 800; font-size: 1.5rem; color: #d48f2b; }
-    .quantity { display: block; color: #6b4f3a; font-size: 0.88rem; font-weight: 700; margin-top: 4px; text-transform: lowercase; }
+    .menu-card { background: white; border-radius: 32px; overflow: hidden; box-shadow: 0 12px 28px rgba(39,98,39,0.08); transition: all 0.3s; text-align: center; padding: 24px 16px 28px; border: 1px solid rgba(76,175,80,0.12); }
+    .menu-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(39,98,39,0.14); }
+    .menu-icon { font-size: 3.5rem; color: #4caf50; }
+    .menu-card h3 { margin: 16px 0 8px; font-size: 1.7rem; color: #1b4d1b; }
+    .menu-card p { color: #3a5a3a; margin: 12px 0; }
+    .price { display: block; font-weight: 800; font-size: 1.5rem; color: #276227; }
+    .quantity { display: block; color: #4a6a4a; font-size: 0.88rem; font-weight: 700; margin-top: 4px; text-transform: lowercase; }
     .whatsapp-order { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; padding: 10px 18px; border-radius: 40px; background: #25d366; color: white; font-weight: 700; text-decoration: none; box-shadow: 0 8px 18px rgba(37, 211, 102, 0.2); transition: all 0.25s ease; }
     .whatsapp-order:hover { background: #1fb958; transform: translateY(-3px); box-shadow: 0 12px 22px rgba(37, 211, 102, 0.28); }
 
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
-    .gallery-item { overflow: hidden; border-radius: 28px; box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1); transition: transform 0.4s ease; cursor: pointer; aspect-ratio: 1 / 1; }
+    .gallery-item { overflow: hidden; border-radius: 28px; box-shadow: 0 20px 30px -10px rgba(39,98,39,0.12); transition: transform 0.4s ease; cursor: pointer; aspect-ratio: 1 / 1; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
     .gallery-item:hover img { transform: scale(1.08); }
 
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .blog-card { background: white; border-radius: 2rem; overflow: hidden; transition: all 0.25s; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+    .blog-card { background: white; border-radius: 2rem; overflow: hidden; transition: all 0.25s; box-shadow: 0 5px 20px rgba(39,98,39,0.07); border: 1px solid rgba(76,175,80,0.1); }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(39,98,39,0.12); }
     .blog-card img { width: 100%; height: 210px; object-fit: cover; }
     .blog-content { padding: 1.5rem; }
-    .blog-category { color: #e6b422; font-weight: 700; letter-spacing: 1px; font-size: 0.75rem; text-transform: uppercase; }
-    .blog-title { font-size: 1.4rem; margin: 10px 0; }
-    .blog-excerpt { color: #5e4636; margin: 12px 0; line-height: 1.4; }
-    .read-more { color: #d48f2b; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .blog-category { color: #4caf50; font-weight: 700; letter-spacing: 1px; font-size: 0.75rem; text-transform: uppercase; }
+    .blog-title { font-size: 1.4rem; margin: 10px 0; color: #1b4d1b; }
+    .blog-excerpt { color: #3a5a3a; margin: 12px 0; line-height: 1.4; }
+    .read-more { color: #276227; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .read-more:hover { color: #1b4d1b; }
 
-    .about-section { background: #fff6ed; border-radius: 48px; margin: 40px 0; padding: 40px 32px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+    .about-section { background: #e8f5e9; border-radius: 48px; margin: 40px 0; padding: 40px 32px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; border: 1px solid rgba(76,175,80,0.2); }
     .about-img { flex: 1; border-radius: 36px; overflow: hidden; }
     .about-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .about-text { flex: 1.2; }
-    .about-text h3 { font-size: 2rem; margin-bottom: 20px; }
-    .about-text p { line-height: 1.5; margin-bottom: 20px; color: #3f2d1f; }
+    .about-text h3 { font-size: 2rem; margin-bottom: 20px; color: #1b4d1b; }
+    .about-text p { line-height: 1.5; margin-bottom: 20px; color: #2a4a2a; }
 
-    .footer { background: #2e241f; color: #f3e1c0; padding: 50px 0 20px; margin-top: 60px; border-radius: 40px 40px 0 0; }
+    .footer { background: #1a2e1a; color: #d4edd4; padding: 50px 0 20px; margin-top: 60px; border-radius: 40px 40px 0 0; }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
-    .footer-col h4 { font-size: 1.4rem; margin-bottom: 20px; color: #f8cf7a; }
+    .footer-col h4 { font-size: 1.4rem; margin-bottom: 20px; color: #81c784; }
     .footer-col p, .footer-col ul { line-height: 1.7; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin: 10px 0; }
-    .footer-col ul li i { margin-right: 8px; color: #e6b422; }
-    .social-icons a { color: #f3e1c0; font-size: 1.5rem; margin-right: 18px; transition: 0.2s; display: inline-block; }
-    .social-icons a:hover { color: #e6b422; transform: translateY(-3px); }
-    .copyright { text-align: center; border-top: 1px solid #4b3628; padding-top: 24px; font-size: 0.9rem; }
+    .footer-col ul li i { margin-right: 8px; color: #4caf50; }
+    .social-icons a { color: #d4edd4; font-size: 1.5rem; margin-right: 18px; transition: 0.2s; display: inline-block; }
+    .social-icons a:hover { color: #81c784; transform: translateY(-3px); }
+    .copyright { text-align: center; border-top: 1px solid #2e4d2e; padding-top: 24px; font-size: 0.9rem; }
 
     .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; cursor: pointer; }
     .modal img { max-width: 85%; max-height: 85%; border-radius: 24px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
@@ -149,12 +152,12 @@
       #home, #menu, #gallery, #blog, #about, #contact { scroll-margin-top: 96px; }
       .nav-container { min-height: 88px; padding: 1rem 1.5rem; transition: min-height 0.25s ease, padding 0.25s ease; }
       .logo { font-size: 1.4rem; }
-      .navbar.is-scrolled { background: #fffffff2; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      .navbar.is-scrolled { background: #fffffff2; box-shadow: 0 8px 24px rgba(39,98,39,0.1); }
       .navbar.is-scrolled .nav-container { min-height: 64px; padding: 0.55rem 1.25rem; }
       .navbar.is-scrolled .logo { font-size: 1.12rem; }
       .navbar.is-scrolled .brand-mark { width: 36px; height: 36px; opacity: 1; }
       .navbar.is-scrolled .brand-name span { font-size: 0.95rem; }
-      .nav-links { position: fixed; top: 88px; left: -100%; background: #fffef7; width: 70%; height: 100vh; flex-direction: column; padding: 2rem; gap: 2rem; box-shadow: 5px 0 20px rgba(0,0,0,0.1); transition: 0.3s; border-radius: 0 32px 32px 0; z-index: 999; }
+      .nav-links { position: fixed; top: 88px; left: -100%; background: #f4faf4; width: 70%; height: 100vh; flex-direction: column; padding: 2rem; gap: 2rem; box-shadow: 5px 0 20px rgba(39,98,39,0.12); transition: 0.3s; border-radius: 0 32px 32px 0; z-index: 999; }
       .navbar.is-scrolled .nav-links { top: 64px; }
       .nav-links.active { left: 0; }
       .menu-icon { display: block; }
@@ -186,7 +189,7 @@
       <a href="#menu" class="btn">Explore Collection →</a>
     </div>
     <div class="banner-img">
-      <img src="images/logo600x600.png" alt="NASNA logo">
+      <img src="images/logo-new.png" alt="NASNA logo">
     </div>
   </div>
 </section>

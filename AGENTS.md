@@ -22,9 +22,11 @@ Agents must strictly adhere to the established design system to maintain a premi
 - Body: `'Inter', sans-serif` (Clean, modern, readable)
 
 ### Color Palette
-- **Backgrounds**: `#fefaf5` (Warm off-white)
-- **Text & Footer**: `#2e241f`, `#3b2d23`, `#5a3e2b` (Rich dark browns)
-- **Highlights/Accents**: `#e6b422`, `#d48f2b` (Golden honey tones)
+- **Backgrounds**: `#f4faf4` (Fresh green-white)
+- **Text**: `#1a2e1a`, `#1b4d1b`, `#2e4a2e` (Rich dark greens)
+- **Highlights/Accents**: `#276227`, `#4caf50` (Forest green tones)
+- **Soft tones**: `#81c784`, `#d4edd4` (Mint greens for footer/muted text)
+- **Footer/Dark**: `#1a2e1a` (Dark forest green)
 
 ### UI Components
 - **Images/Cards**: Large border radiuses (`32px`, `24px`) for a soft, organic feel.
