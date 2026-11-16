@@ -12,6 +12,10 @@
       "destination": "/blog.html"
     },
     {
+      "source": "/faq",
+      "destination": "/faq.html"
+    },
+    {
       "source": "/about",
       "destination": "/about.html"
     },
