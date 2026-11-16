@@ -1,0 +1,710 @@
+<!-- FILE: contact.html (NASNA Contact Us Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Contact Us | NASNA Enterprises - Pure Raw Honey</title>
+  <meta name="description" content="Get in touch with NASNA Enterprises. Send your queries directly to scm@nasna.in or reach us via WhatsApp at +91 9873162762 for orders, bulk gifting, and support.">
+  <meta name="keywords" content="contact NASNA, NASNA honey customer care, email scm@nasna.in, NASNA WhatsApp number, pure honey Varanasi, bulk honey orders, corporate gifting honey">
+  <meta name="author" content="NASNA Enterprises">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nasna.in/contact">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NASNA Enterprises">
+  <meta property="og:title" content="Contact Us | NASNA Enterprises - Pure Raw Honey">
+  <meta property="og:description" content="Reach out to NASNA Enterprises. Write your queries to scm@nasna.in or chat with us on WhatsApp at +91 9873162762.">
+  <meta property="og:url" content="https://nasna.in/contact">
+  <meta property="og:image" content="https://nasna.in/images/logo600x600.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Us | NASNA Enterprises">
+  <meta name="twitter:description" content="Reach out to NASNA Enterprises via Email (scm@nasna.in) or WhatsApp (+91 9873162762).">
+  <meta name="twitter:image" content="https://nasna.in/images/logo600x600.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact NASNA Enterprises",
+      "url": "https://nasna.in/contact",
+      "description": "Contact NASNA Enterprises for pure raw honey orders, inquiries, and customer support via email or WhatsApp.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "NASNA Enterprises",
+        "email": "scm@nasna.in",
+        "telephone": "+919873162762",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Barasata Sakalpur, Gajepur",
+          "addressLocality": "Varanasi",
+          "addressRegion": "Uttar Pradesh",
+          "postalCode": "221403",
+          "addressCountry": "IN"
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f4faf4; color: #1a2e1a; }
+    h1, h2, h3, h4, .logo, .nav-links a, .btn { font-family: 'Playfair Display', serif; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+    #siteHeader { min-height: 82px; }
+    .navbar { background: #ffffffee; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(39,98,39,0.06); position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; transition: box-shadow 0.25s ease, background 0.25s ease; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; min-height: 82px; padding: 1rem 2rem; max-width: 1400px; margin: 0 auto; transition: min-height 0.25s ease, padding 0.25s ease; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; font-size: 1.8rem; font-weight: 700; color: #276227; letter-spacing: -0.5px; text-decoration: none; transition: font-size 0.25s ease; }
+    .logo span { color: #3d7a3d; font-weight: 500; }
+    .brand-name { color: #276227; }
+    .brand-name span { color: #3d7a3d; }
+    .brand-mark { width: 0; height: 0; border-radius: 50%; opacity: 0; object-fit: cover; transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease; }
+    .navbar.is-scrolled { background: #fffffff2; box-shadow: 0 8px 24px rgba(39,98,39,0.1); }
+    .navbar.is-scrolled .nav-container { min-height: 64px; padding: 0.55rem 2rem; }
+    .navbar.is-scrolled .logo { font-size: 1.3rem; }
+    .navbar.is-scrolled .brand-mark { width: 38px; height: 38px; opacity: 1; }
+    .navbar.is-scrolled .brand-name span { font-size: 1.08rem; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 600; color: #1e3d1e; transition: 0.2s; font-size: 1.05rem; }
+    .nav-links a:hover, .nav-links a.active { color: #276227; }
+    .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #276227; }
+
+    /* Hero Section */
+    .contact-hero {
+      background: linear-gradient(135deg, #e8f5e9 0%, #d4edd4 60%, #c8e6c9 100%);
+      border-radius: 0 0 56px 56px;
+      padding: 64px 0 54px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(76,175,80,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-block;
+      color: #276227;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.65);
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(76,175,80,0.25);
+    }
+    .contact-hero h1 {
+      color: #1b4d1b;
+      font-size: 3.4rem;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .contact-hero p {
+      color: #2e4a2e;
+      font-size: 1.15rem;
+      line-height: 1.65;
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    /* Main Grid Layout */
+    .contact-main {
+      padding: 56px 0 70px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Form Card */
+    .form-card {
+      background: #ffffff;
+      border-radius: 32px;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      box-shadow: 0 12px 32px rgba(39, 98, 39, 0.08);
+      padding: 40px 36px;
+    }
+    .form-header {
+      margin-bottom: 28px;
+    }
+    .form-header h2 {
+      color: #1b4d1b;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .form-header p {
+      color: #3d5a3d;
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+    .email-dest-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e8f5e9;
+      color: #276227;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-top: 10px;
+      border: 1px solid rgba(76, 175, 80, 0.25);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: #1e3d1e;
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 18px;
+      border-radius: 16px;
+      border: 1.5px solid rgba(76, 175, 80, 0.3);
+      background: #fafdfa;
+      font-size: 0.98rem;
+      font-family: 'Inter', sans-serif;
+      color: #1a2e1a;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #276227;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.6;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .btn-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .btn-submit-mail {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #276227;
+      color: #ffffff;
+      padding: 15px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 18px rgba(39,98,39,0.3);
+      border: none;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+    }
+    .btn-submit-mail:hover {
+      background: #1b4d1b;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(39,98,39,0.35);
+    }
+    .btn-whatsapp-sync {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25d366;
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
+      border: none;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+    }
+    .btn-whatsapp-sync:hover {
+      background: #1fb958;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+    }
+
+    .form-status-alert {
+      display: none;
+      margin-top: 18px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: #eef8ee;
+      border: 1px solid #4caf50;
+      color: #1b4d1b;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    /* Right Column: Contact Cards */
+    .contact-info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* WhatsApp Highlight Card */
+    .highlight-card {
+      background: linear-gradient(135deg, #e8f8ec 0%, #d2f4dc 100%);
+      border-radius: 30px;
+      border: 1.5px solid rgba(37, 211, 102, 0.35);
+      padding: 32px;
+      box-shadow: 0 10px 26px rgba(37, 211, 102, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .highlight-card::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(37, 211, 102, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .highlight-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .highlight-icon {
+      width: 52px;
+      height: 52px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 6px 14px rgba(37, 211, 102, 0.35);
+    }
+    .highlight-card h3 {
+      font-size: 1.5rem;
+      color: #0e4c23;
+    }
+    .highlight-card p {
+      color: #1e5a32;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 0.98rem;
+    }
+    .btn-wa-direct {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25d366;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+    .btn-wa-direct:hover {
+      background: #1fb958;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Details Card */
+    .details-card {
+      background: #ffffff;
+      border-radius: 30px;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      padding: 32px;
+      box-shadow: 0 10px 26px rgba(39, 98, 39, 0.06);
+    }
+    .details-card h3 {
+      font-size: 1.5rem;
+      color: #1b4d1b;
+      margin-bottom: 20px;
+    }
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .info-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .info-icon-box {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 14px;
+      background: #eef8ee;
+      color: #276227;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+    }
+    .info-item-content h4 {
+      font-size: 1.05rem;
+      color: #1b4d1b;
+      margin-bottom: 4px;
+      font-family: 'Playfair Display', serif;
+    }
+    .info-item-content p,
+    .info-item-content a {
+      color: #3d5a3d;
+      text-decoration: none;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+    .info-item-content a:hover {
+      color: #276227;
+      text-decoration: underline;
+    }
+
+    /* Social icons in card */
+    .card-social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .card-social-links a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #eef8ee;
+      color: #276227;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+    }
+    .card-social-links a:hover {
+      background: #276227;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Footer styling */
+    .footer { background: #1a2e1a; color: #d4edd4; padding: 50px 0 20px; margin-top: 60px; border-radius: 40px 40px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-size: 1.4rem; margin-bottom: 20px; color: #81c784; }
+    .footer-col p, .footer-col ul { line-height: 1.7; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin: 10px 0; }
+    .footer-col ul li i { margin-right: 8px; color: #4caf50; }
+    .social-icons a { color: #d4edd4; font-size: 1.5rem; margin-right: 18px; transition: 0.2s; display: inline-block; }
+    .social-icons a:hover { color: #81c784; transform: translateY(-3px); }
+    .copyright { text-align: center; border-top: 1px solid #2e4d2e; padding-top: 24px; font-size: 0.9rem; }
+
+    @media (max-width: 960px) {
+      .contact-main { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 880px) {
+      #siteHeader { min-height: 88px; }
+      .nav-container { min-height: 88px; padding: 1rem 1.5rem; }
+      .logo { font-size: 1.4rem; }
+      .navbar.is-scrolled { background: #fffffff2; box-shadow: 0 8px 24px rgba(39,98,39,0.1); }
+      .navbar.is-scrolled .nav-container { min-height: 64px; padding: 0.55rem 1.25rem; }
+      .navbar.is-scrolled .logo { font-size: 1.12rem; }
+      .navbar.is-scrolled .brand-mark { width: 36px; height: 36px; opacity: 1; }
+      .navbar.is-scrolled .brand-name span { font-size: 0.95rem; }
+      .nav-links { position: fixed; top: 88px; left: -100%; background: #f4faf4; width: 70%; height: 100vh; flex-direction: column; padding: 2rem; gap: 2rem; box-shadow: 5px 0 20px rgba(39,98,39,0.12); transition: 0.3s; border-radius: 0 32px 32px 0; z-index: 999; }
+      .navbar.is-scrolled .nav-links { top: 64px; }
+      .nav-links.active { left: 0; }
+      .menu-icon { display: block; }
+      .container { padding: 0 20px; }
+      .contact-hero h1 { font-size: 2.4rem; }
+      .form-card { padding: 30px 22px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+    }
+  </style>
+</head>
+<body data-page="contact">
+  <div id="siteHeader"></div>
+
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="container">
+      <span class="eyebrow"><i class="fas fa-envelope-open-text"></i> Connect with NASNA</span>
+      <h1>Contact Us</h1>
+      <p>Have a question about our pure raw honey varieties, bulk corporate gifting, or supply chain partnerships? Write to us via email or reach out instantly on WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main class="container contact-main">
+    <!-- Left Column: The Query & Message Form -->
+    <div class="form-card">
+      <div class="form-header">
+        <h2>Send Us a Query</h2>
+        <p>Fill out the form below. Your query will be delivered directly to our supply chain and management team.</p>
+        <span class="email-dest-badge"><i class="fas fa-paper-plane"></i> Receives at: <strong>scm@nasna.in</strong></span>
+      </div>
+
+      <form id="contactQueryForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userName"><i class="fas fa-user"></i> Your Full Name *</label>
+            <input type="text" id="userName" name="name" placeholder="e.g. Rahul Sharma" required>
+          </div>
+          <div class="form-group">
+            <label for="userEmail"><i class="fas fa-envelope"></i> Email Address *</label>
+            <input type="email" id="userEmail" name="email" placeholder="e.g. rahul@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userPhone"><i class="fas fa-phone"></i> Phone / WhatsApp Number</label>
+            <input type="tel" id="userPhone" name="phone" placeholder="e.g. +91 9876543210">
+          </div>
+          <div class="form-group">
+            <label for="userPurpose"><i class="fas fa-tag"></i> Purpose of Query *</label>
+            <select id="userPurpose" name="purpose" required>
+              <option value="" disabled selected>Select your purpose</option>
+              <option value="Product Inquiry (Ajwain, Fennel, Multi-Floral)">Product Inquiry</option>
+              <option value="Bulk Order & Corporate Gifting">Bulk Order & Corporate Gifting</option>
+              <option value="Distribution & Wholesale Partnership">Distribution & Wholesale Partnership</option>
+              <option value="Sustainable Apiculture & Beekeeping">Beekeeping Guidance & Mentorship</option>
+              <option value="Order Tracking & Customer Support">Order Tracking & Customer Support</option>
+              <option value="General Query">Other / General Query</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="userMessage"><i class="fas fa-comment-dots"></i> Write Your Query or Message *</label>
+          <textarea id="userMessage" name="message" placeholder="Please describe your query, requirements, or order details in detail..." required></textarea>
+        </div>
+
+        <div class="btn-actions">
+          <!-- Primary Action: Send Query to scm@nasna.in -->
+          <button type="submit" class="btn-submit-mail" id="sendQueryBtn">
+            <i class="fas fa-paper-plane"></i> Send Query via Email (scm@nasna.in)
+          </button>
+
+          <!-- Alternative Action: Send via WhatsApp -->
+          <button type="button" class="btn-whatsapp-sync" id="sendViaWhatsAppBtn">
+            <i class="fab fa-whatsapp"></i> Send via WhatsApp (+91 9873162762)
+          </button>
+        </div>
+
+        <div id="formStatusAlert" class="form-status-alert"></div>
+      </form>
+    </div>
+
+    <!-- Right Column: Direct Reach-out Channels & Info -->
+    <div class="contact-info-panel">
+      <!-- WhatsApp Direct Highlight Card -->
+      <div class="highlight-card">
+        <div class="highlight-header">
+          <div class="highlight-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div>
+            <h3>Instant WhatsApp</h3>
+            <p style="margin:0; font-size:0.88rem; color:#1a522c;">Direct chat with our honey team</p>
+          </div>
+        </div>
+        <p>Need a quick answer or want to place an order immediately? Message our dedicated WhatsApp helpline:</p>
+        <div style="margin-bottom: 20px;">
+          <strong style="font-size: 1.25rem; color: #0f4c24; display:block;">+91 9873162762</strong>
+          <span style="font-size: 0.85rem; color: #2e6b41;">Available Mon – Sat, 9:00 AM – 7:00 PM IST</span>
+        </div>
+        <a href="https://wa.me/919873162762?text=Hello%20NASNA%2C%20I%20have%20an%20inquiry%20about%20your%20pure%20raw%20honey." target="_blank" rel="noopener" class="btn-wa-direct">
+          <i class="fab fa-whatsapp"></i> Chat Now on WhatsApp
+        </a>
+      </div>
+
+      <!-- Detailed Info Card -->
+      <div class="details-card">
+        <h3>Contact Details</h3>
+        <ul class="info-list">
+          <li class="info-item">
+            <div class="info-icon-box">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info-item-content">
+              <h4>Supply Chain & Queries</h4>
+              <a href="mailto:scm@nasna.in"><strong>scm@nasna.in</strong></a>
+              <p style="font-size: 0.84rem; color: #627f62; margin-top: 2px;">Dedicated address for all customer & trade queries</p>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <div class="info-icon-box">
+              <i class="fas fa-shopping-bag"></i>
+            </div>
+            <div class="info-item-content">
+              <h4>Sales & Bulk Orders</h4>
+              <a href="mailto:sales@nasna.in">sales@nasna.in</a>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <div class="info-icon-box">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="info-item-content">
+              <h4>Phone & Customer Care</h4>
+              <a href="tel:+919873162762">+91 9873162762</a>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <div class="info-icon-box">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-item-content">
+              <h4>Registered Office & Apiary Base</h4>
+              <p>NASNA Enterprises,<br>Barasata Sakalpur, Gajepur,<br>Varanasi, Uttar Pradesh 221403, India</p>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <div class="info-icon-box">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="info-item-content">
+              <h4>Business Working Hours</h4>
+              <p>Monday – Saturday: 9:00 AM – 7:00 PM IST<br><small style="color:#627f62;">Closed on Sundays & National Holidays</small></p>
+            </div>
+          </li>
+
+          <li class="info-item">
+            <div class="info-icon-box">
+              <i class="fas fa-share-alt"></i>
+            </div>
+            <div class="info-item-content">
+              <h4>Follow Our Journey</h4>
+              <div class="card-social-links">
+                <a href="https://www.facebook.com/NASNAEnterprises/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/nasna_enterprises?igsh=MWFqcTYxZDd0czQwZQ==" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/nasna-enterprises/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="/includes.js"></script>
+  <script>
+    const form = document.getElementById('contactQueryForm');
+    const sendQueryBtn = document.getElementById('sendQueryBtn');
+    const sendViaWhatsAppBtn = document.getElementById('sendViaWhatsAppBtn');
+    const statusAlert = document.getElementById('formStatusAlert');
+
+    function getFormData() {
+      const name = document.getElementById('userName').value.trim();
+      const email = document.getElementById('userEmail').value.trim();
+      const phone = document.getElementById('userPhone').value.trim() || 'Not specified';
+      const purpose = document.getElementById('userPurpose').value || 'General Query';
+      const message = document.getElementById('userMessage').value.trim();
+      return { name, email, phone, purpose, message };
+    }
+
+    // 1. Submit Query via Mail (to scm@nasna.in)
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const { name, email, phone, purpose, message } = getFormData();
+
+      if (!name || !email || !message) {
+        alert('Please fill in your name, email, and query message.');
+        return;
+      }
+
+      const subject = encodeURIComponent(`NASNA Query: [${purpose}] from ${name}`);
+      const body = encodeURIComponent(
+        `Dear NASNA Team,\n\n` +
+        `I would like to submit the following query:\n\n` +
+        `----------------------------------------\n` +
+        `PURPOSE: ${purpose}\n` +
+        `NAME: ${name}\n` +
+        `EMAIL: ${email}\n` +
+        `PHONE / WHATSAPP: ${phone}\n` +
+        `----------------------------------------\n\n` +
+        `QUERY / MESSAGE:\n` +
+        `${message}\n\n` +
+        `Best regards,\n` +
+        `${name}`
+      );
+
+      const mailtoUrl = `mailto:scm@nasna.in?subject=${subject}&body=${body}`;
+
+      // Open email client
+      window.location.href = mailtoUrl;
+
+      // In-page feedback
+      statusAlert.style.display = 'block';
+      statusAlert.innerHTML = `
+        <div style="display:flex; align-items:flex-start; gap:10px;">
+          <i class="fas fa-check-circle" style="color:#276227; font-size:1.2rem; margin-top:2px;"></i>
+          <div>
+            <strong>Query Prepared for scm@nasna.in!</strong><br>
+            Your email client should open automatically with your details pre-filled. If it did not open, you can send your message directly to <a href="mailto:scm@nasna.in" style="color:#276227; font-weight:700;">scm@nasna.in</a>.
+          </div>
+        </div>
+      `;
+    });
+
+    // 2. Submit Query via WhatsApp (+91 9873162762)
+    sendViaWhatsAppBtn.addEventListener('click', () => {
+      const { name, email, phone, purpose, message } = getFormData();
+
+      let text = `Hello NASNA Team, I have a query from your website.\n\n`;
+      if (purpose) text += `*Purpose:* ${purpose}\n`;
+      if (name) text += `*Name:* ${name}\n`;
+      if (email) text += `*Email:* ${email}\n`;
+      if (phone && phone !== 'Not specified') text += `*Phone:* ${phone}\n`;
+      if (message) text += `\n*Query:* ${message}\n`;
+
+      const waUrl = `https://wa.me/919873162762?text=${encodeURIComponent(text)}`;
+      window.open(waUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
