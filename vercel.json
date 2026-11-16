@@ -30,6 +30,10 @@
     {
       "source": "/blog/raw-honey-vs-processed",
       "destination": "/blog-post.html"
+    },
+    {
+      "source": "/blog/why-does-honey-crystallize",
+      "destination": "/blog-post.html"
     }
   ]
 }

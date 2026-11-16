@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NASNA Pure Honey Stories | Raw Honey, Recipes & Beekeeping</title>
   <meta name="description" content="Read NASNA Pure Honey Stories about raw honey, beekeeping, wellness, and honey-infused recipes.">
-  <meta name="keywords" content="NASNA blog, honey stories, raw honey benefits, beekeeping tips, honey recipes, NASNA Enterprises">
+  <meta name="keywords" content="NASNA blog, honey stories, raw honey benefits, beekeeping tips, honey recipes, honey crystallization, NASNA Enterprises">
   <meta name="author" content="NASNA Enterprises">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nasna.in/blog">
@@ -20,7 +20,7 @@
   <meta name="twitter:title" content="NASNA Pure Honey Stories">
   <meta name="twitter:description" content="Read raw honey, beekeeping, wellness, and recipe stories from NASNA Enterprises.">
   <meta name="twitter:image" content="https://nasna.in/images/logo600x600.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -44,18 +44,53 @@
     .nav-links a { text-decoration: none; font-weight: 600; color: #1e3d1e; transition: 0.2s; font-size: 1.05rem; }
     .nav-links a:hover, .nav-links a.active { color: #276227; }
     .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #276227; }
-    .blog-detail-container { max-width: 850px; margin: 60px auto; padding: 0 24px; }
-    .back-home { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px; color:#276227; text-decoration:none; font-weight:600; transition: color 0.2s; }
+    .blog-detail-container { max-width: 860px; margin: 60px auto; padding: 0 24px; }
+    .back-home { display: inline-flex; align-items: center; gap: 8px; color:#276227; text-decoration:none; font-weight:600; transition: color 0.2s; }
     .back-home:hover { color:#1b4d1b; text-decoration:underline; }
     .article-img { width:100%; border-radius: 32px; margin: 20px 0; box-shadow:0 12px 24px rgba(39,98,39,0.12); }
     .blog-category { color: #4caf50; font-weight: 700; letter-spacing:1px; font-size:0.8rem; text-transform:uppercase; }
-    h1 { font-size: 2.8rem; font-family: 'Playfair Display', serif; margin: 15px 0 20px; color:#1b4d1b; }
-    .article-content { font-size: 1.1rem; line-height: 1.7; margin-top: 30px; color:#2a3d2a; }
+    h1 { font-size: 2.8rem; font-family: 'Playfair Display', serif; margin: 15px 0 20px; color:#1b4d1b; line-height: 1.2; }
+    
+    /* Rich Article Content Styles */
+    .article-content { font-size: 1.1rem; line-height: 1.75; margin-top: 30px; color:#2a3d2a; }
     .article-content p { margin-bottom: 1.5rem; }
+    .article-content h2 { font-size: 1.85rem; color: #1b4d1b; margin: 40px 0 16px; font-family: 'Playfair Display', serif; }
+    .article-content h3 { font-size: 1.3rem; color: #276227; margin: 26px 0 10px; font-family: 'Playfair Display', serif; }
+    .article-content ul, .article-content ol { margin: 12px 0 24px 28px; }
+    .article-content li { margin-bottom: 10px; line-height: 1.65; }
+    .article-content strong { color: #1a351a; }
+    
     .article-points { display: grid; gap: 16px; margin: 10px 0 28px; }
     .article-point { background: #f1f8f1; border: 1px solid rgba(76,175,80,0.2); border-radius: 18px; padding: 18px 20px; }
     .article-point h3 { color: #1b4d1b; font-size: 1.22rem; margin-bottom: 8px; }
     .article-point p { margin-bottom: 0; }
+
+    .article-callout { background: #eef8ee; border-left: 4px solid #276227; border-radius: 0 18px 18px 0; padding: 20px 24px; margin: 26px 0; }
+    .article-callout.warning { background: #fffbeb; border-left-color: #d97706; }
+    .article-callout strong { color: #1b4d1b; }
+    .article-callout.warning strong { color: #92400e; }
+
+    .article-table-wrap { overflow-x: auto; margin: 28px 0; border-radius: 20px; border: 1px solid rgba(76,175,80,0.2); box-shadow: 0 6px 18px rgba(39,98,39,0.06); }
+    .article-table { width: 100%; border-collapse: collapse; text-align: left; background: #fff; font-size: 0.98rem; }
+    .article-table th { background: #e8f5e9; color: #1b4d1b; padding: 16px 20px; font-weight: 700; border-bottom: 1px solid rgba(76,175,80,0.2); font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+    .article-table td { padding: 16px 20px; border-bottom: 1px solid rgba(76,175,80,0.1); color: #2e4a2e; }
+    .article-table tr:last-child td { border-bottom: none; }
+    .article-table tr:hover td { background: #fafdfa; }
+
+    .myth-fact-grid { display: grid; gap: 18px; margin: 24px 0; }
+    .myth-fact-item { background: #fff; border-radius: 20px; border: 1px solid rgba(76,175,80,0.18); padding: 20px 24px; box-shadow: 0 4px 16px rgba(39,98,39,0.05); }
+    .myth-badge { display: inline-block; background: #fee2e2; color: #b91c1c; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.8px; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; margin-bottom: 8px; }
+    .fact-badge { display: inline-block; background: #dcfce7; color: #15803d; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.8px; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; margin: 12px 0 8px; }
+    .myth-fact-item p { margin-bottom: 4px; }
+
+    .faq-item { background: #f8fcf8; border: 1px solid rgba(76,175,80,0.2); border-radius: 18px; padding: 20px 24px; margin-bottom: 16px; }
+    .faq-item h4 { color: #1b4d1b; font-size: 1.2rem; margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+    .faq-item p { margin-bottom: 0; color: #2e4a2e; }
+
+    .ref-list { font-size: 0.95rem; color: #3d5a3d; }
+    .ref-list li { margin-bottom: 12px; }
+    .ref-list a { color: #276227; text-decoration: underline; font-weight: 600; word-break: break-all; }
+
     .footer { background: #1a2e1a; color: #d4edd4; padding: 50px 0 20px; margin-top: 70px; border-radius: 40px 40px 0 0; }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
     .footer-col h4 { font-size: 1.4rem; margin-bottom: 20px; color: #81c784; font-family: 'Playfair Display', serif; }
@@ -151,6 +186,175 @@
         metaDescription: "Understand the difference between raw honey and processed honey, and why NASNA raw honey keeps natural enzymes and antioxidants intact.",
         fullContent: "Raw honey contains natural enzymes, pollen, and compounds like hydrogen peroxide that aid digestion and support immunity. Processed honey is often heated and filtered, destroying beneficial nutrients. While both are sweet, raw honey offers anti-inflammatory properties and can soothe sore throats. Choose NASNA raw, local honey for the ultimate wellness boost. Our unfiltered honey retains all the goodness nature intended. Experience the NASNA difference — pure, potent, and packed with health benefits.",
         img: "https://placehold.co/800x450/EED6B0/996F45?text=NASNA+Health+Tips"
+      },
+      {
+        id: 4,
+        slug: "why-does-honey-crystallize",
+        category: "WELLNESS",
+        title: "Why Does Honey Crystallize? Understanding the Science Behind Honey Crystallization",
+        metaDescription: "Explore the biochemistry of honey crystallization: why glucose forms crystals, common myths debunked, how to liquefy it gently, and why it is not spoiled.",
+        img: "https://placehold.co/800x450/F8E5BA/94632C?text=NASNA+Honey+Crystallization",
+        htmlContent: `
+          <p>Honey is commonly recognized by its smooth, golden, liquid appearance. But over time, you may find that your honey becomes cloudy, thick, or grainy, sometimes developing a semi-solid, spreadable texture.</p>
+          <p>This natural change often raises questions about its freshness, quality, and authenticity: <em>Is crystallized honey spoiled? Does it indicate added table sugar? And why does some honey crystallize faster than others?</em></p>
+          <p>The answer lies in the natural chemical composition of pure honey. Crystallization is a natural physical process in which glucose, one of honey's principal sugars, separates from liquid and forms solid crystals. It is not spoilage, nor does it mean your honey is adulterated.</p>
+
+          <h2>1. The Science Behind Honey Crystallization</h2>
+          <p>Honey is a concentrated solution of naturally occurring sugars, primarily <strong>glucose</strong> and <strong>fructose</strong>, along with water and small quantities of minerals, enzymes, and pollen.</p>
+          <p>The difference between these two primary sugars plays a central role in crystallization:</p>
+          <ul>
+            <li><strong>Glucose:</strong> Has relatively low solubility in water and tends to separate from the solution, forming solid crystals (specifically glucose monohydrate).</li>
+            <li><strong>Fructose:</strong> Is significantly more soluble in water and generally remains dissolved in the liquid portion.</li>
+          </ul>
+          <p>Honey is naturally a <em>supersaturated sugar solution</em>. This means it contains more dissolved sugar than water would ordinarily hold under standard room conditions. Over time, glucose molecules separate from the liquid phase and arrange into solid crystals, gradually shifting the honey's texture from fluid to thick, creamy, or grainy.</p>
+          
+          <div class="article-callout">
+            <strong>Key Principle:</strong> Honey crystallizes primarily because of the natural behavior and lower solubility of glucose, not because sugar has been added to it.
+          </div>
+
+          <h2>2. Why Does Some Honey Crystallize Faster Than Others?</h2>
+          <p>Crystallization does not occur at the same rate in every jar. Its speed, consistency, and texture depend on several interacting natural factors:</p>
+          
+          <h3>A. Glucose-to-Fructose Ratio</h3>
+          <p>The relative proportion of glucose and fructose is one of the most decisive factors. Honey with a higher glucose-to-fructose ratio has a much greater tendency to crystallize rapidly (often within weeks). In contrast, honey varieties with relatively more fructose can remain in a fluid, liquid state for months or even years.</p>
+
+          <h3>B. Floral Source & Botanical Origin</h3>
+          <p>The floral nectar collected by bees determines the unique sugar balance of each honey. For instance, rapeseed (mustard) honey is well known for rapid crystallization, whereas acacia honey is naturally high in fructose and crystallizes very slowly. These variations reflect authentic botanical diversity, not differences in quality.</p>
+
+          <h3>C. Moisture Content</h3>
+          <p>Water content influences the concentration and solubility of sugars. Lower moisture can accelerate crystal formation. However, excessive moisture (above 20%) is undesirable because it increases the risk of fermentation during storage.</p>
+
+          <h3>D. Storage Temperature</h3>
+          <p>Storage temperature has a significant influence. Honey crystallizes most rapidly under cool room conditions, particularly around <strong>10°C to 15°C (50°F–59°F)</strong>. At very low refrigerator temperatures, crystal formation actually slows down because honey becomes highly viscous, restricting molecular movement. Warm temperatures above 25°C keep sugars dissolved.</p>
+
+          <h3>E. Natural Nucleation Particles (Pollen & Beeswax)</h3>
+          <p>Raw, unfiltered honey retains natural microscopic particles including pollen grains, propolis, beeswax traces, and micro air bubbles. These act as <em>nucleation sites</em>—surfaces where glucose molecules easily attach and seed crystal growth.</p>
+
+          <h2>3. Does Crystallized Honey Mean It Is Fake?</h2>
+          <p><strong>No.</strong> Crystallization alone does not establish whether honey is genuine, adulterated, or pure.</p>
+          <ul>
+            <li>Naturally occurring glucose can crystallize without any added sugar. Therefore, the appearance of crystals is not evidence of adulteration.</li>
+            <li>However, the opposite assumption is equally incorrect: crystallization does not automatically prove purity, since synthetic sugar syrups can also be formulated to crystallize or stay liquid.</li>
+          </ul>
+          <p>Visual appearance and texture are simply not reliable standalone methods for verifying honey purity. Trustworthy authenticity requires laboratory testing (such as isotopic analysis, pollen profiling, and sugar spectrum testing) against accredited food-safety standards.</p>
+
+          <h2>4. Is Crystallized Honey Safe to Consume?</h2>
+          <p><strong>Yes, absolutely.</strong> Crystallization is primarily a physical change in the distribution of sugars and does not indicate spoilage or nutritional loss. The vitamins, antioxidants, and enzymes remain intact.</p>
+          
+          <div class="article-callout warning">
+            <strong>Crystallization vs. Fermentation:</strong> Do not confuse crystallization with fermentation. Honey stored with high moisture may be susceptible to yeast fermentation. If you notice unusual bubbling, frothing, gas pressure, or a sharp sour wine-like smell, the honey has spoiled and should not be consumed.
+            <br><br>
+            <strong>Infant Health Advisory:</strong> Honey in any form (liquid, raw, or crystallized) must <em>never</em> be given to infants below 12 months of age due to the risk of infant botulism.
+          </div>
+
+          <h2>5. How to Return Crystallized Honey to Liquid Form</h2>
+          <p>If you prefer your honey in a pourable liquid state, gentle warming dissolves glucose crystals and restores fluid consistency:</p>
+          <ol>
+            <li>Place your tightly closed, heat-safe glass honey jar in a bowl of warm water (around 40°C–45°C / 104°F–113°F).</li>
+            <li>Allow the jar to warm gradually over 15 to 25 minutes.</li>
+            <li>Gently rotate or stir the honey with a dry spoon once warmed.</li>
+            <li>Remove the jar once the crystals have completely dissolved and allow it to cool.</li>
+          </ol>
+          <div class="article-callout">
+            <strong>Avoid High Heat:</strong> Never boil honey or heat it in the microwave. Excessive heat destroys delicate active enzymes, alters delicate floral aromas, and darkens color.
+          </div>
+
+          <h2>6. Liquid Honey vs. Crystallized Honey</h2>
+          <p>Crystallization changes texture, but both forms deliver identical nutritional benefits:</p>
+          <div class="article-table-wrap">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Characteristic</th>
+                  <th>Liquid Honey</th>
+                  <th>Crystallized Honey</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Appearance</strong></td>
+                  <td>Clear or translucent golden liquid</td>
+                  <td>Cloudy, creamy, or semi-solid opaque</td>
+                </tr>
+                <tr>
+                  <td><strong>Texture</strong></td>
+                  <td>Fluid, smooth, easily pourable</td>
+                  <td>Thick, spreadable, velvety to fine grain</td>
+                </tr>
+                <tr>
+                  <td><strong>Physical State</strong></td>
+                  <td>Predominantly liquid solution</td>
+                  <td>Glucose monohydrate crystal network</td>
+                </tr>
+                <tr>
+                  <td><strong>Nutritional Value</strong></td>
+                  <td>Full enzymes & antioxidants intact</td>
+                  <td>Identical enzymes & antioxidants intact</td>
+                </tr>
+                <tr>
+                  <td><strong>Culinary Use</strong></td>
+                  <td>Great for drinks, tea, and drizzling</td>
+                  <td>Ideal for spreading on toast, warm roti, and oats without dripping</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Neither form is superior. Consumer preference varies—many honey lovers actively prefer crystallized honey because it spreads like butter and doesn't drip!</p>
+
+          <h2>7. Common Myths About Honey Crystallization</h2>
+          <div class="myth-fact-grid">
+            <div class="myth-fact-item">
+              <span class="myth-badge">Myth</span>
+              <p><strong>"Crystallized honey is adulterated with table sugar."</strong></p>
+              <span class="fact-badge">Fact</span>
+              <p>Natural floral glucose separates and forms crystals in 100% pure, unadulterated honey.</p>
+            </div>
+            <div class="myth-fact-item">
+              <span class="myth-badge">Myth</span>
+              <p><strong>"Pure honey must always crystallize."</strong></p>
+              <span class="fact-badge">Fact</span>
+              <p>Different botanical floral sources possess different sugar profiles. High-fructose honeys (such as acacia) can remain liquid naturally for years.</p>
+            </div>
+            <div class="myth-fact-item">
+              <span class="myth-badge">Myth</span>
+              <p><strong>"Crystallized honey has expired."</strong></p>
+              <span class="fact-badge">Fact</span>
+              <p>Pure honey properly stored in a sealed jar does not expire. Crystallization is a natural physical change, not spoilage.</p>
+            </div>
+          </div>
+
+          <h2>8. Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h4>Why does honey become thick or grainy?</h4>
+            <p>Glucose separates from the water content and forms crystal monohydrates. As these crystals grow and interlock, the honey takes on a thicker, grainier consistency.</p>
+          </div>
+          <div class="faq-item">
+            <h4>How long does honey take to crystallize?</h4>
+            <p>There is no universal timeline. Some high-glucose varieties crystallize in just a few weeks after extraction, while high-fructose varieties may remain liquid for years.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Should honey be stored in the refrigerator?</h4>
+            <p>Refrigeration is unnecessary and actually accelerates crystallization by keeping temperatures in the 10°C–15°C range. Store honey in a tightly closed container in a cool, dry pantry away from direct sunlight.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Will honey crystallize again after warming?</h4>
+            <p>Yes, it may. Warming dissolves existing crystals, but does not permanently change honey's supersaturated composition. Over time in cool weather, it can naturally recrystallize.</p>
+          </div>
+
+          <h2>Conclusion: Understanding Honey Beyond Its Appearance</h2>
+          <p>Honey is a complex, living gift from nature, and crystallization is one of its signature physical behaviors. The formation of glucose crystals reflects its natural origin and floral heritage.</p>
+          <p>At <strong>NASNA</strong>, we believe that food transparency begins with knowledge. By understanding natural food characteristics and science-based indicators, consumers can make informed choices with complete confidence.</p>
+          <p><em>NASNA — Naturally Sustainable. Naturally Authentic.</em></p>
+
+          <hr style="border:none; border-top:1px solid rgba(76,175,80,0.2); margin:36px 0;">
+
+          <h3>Research & Further Reading</h3>
+          <ul class="ref-list">
+            <li><strong>Food Chemistry (2023):</strong> <em>Natural Crystallization Properties of Honey and Seed Crystals-Induced Crystallization Process for Honey Performance Enhancing.</em> <a href="https://doi.org/10.1016/j.foodchem.2022.134972" target="_blank" rel="noopener">doi.org/10.1016/j.foodchem.2022.134972</a></li>
+            <li><strong>Purdue University Extension:</strong> <em>FoodLink: Honey.</em> <a href="https://extension.purdue.edu/foodlink/food.php?food=honey" target="_blank" rel="noopener">extension.purdue.edu/foodlink</a></li>
+            <li><strong>University of Florida IFAS Extension:</strong> <em>Honey and Its Uses.</em> <a href="https://ask.ifas.ufl.edu/publication/AA154" target="_blank" rel="noopener">ask.ifas.ufl.edu/publication/AA154</a></li>
+          </ul>
+        `
       }
     ];
     
@@ -205,7 +409,7 @@
     
     if(post) {
       applyPostSeo(post);
-      const articleBody = post.points ? `
+      const articleBody = post.htmlContent ? post.htmlContent : (post.points ? `
           <p>${post.intro}</p>
           <div class="article-points">
             ${post.points.map(point => `
@@ -216,7 +420,7 @@
             `).join('')}
           </div>
           <p>${post.conclusion}</p>
-        ` : `<p>${post.fullContent}</p>`;
+        ` : `<p>${post.fullContent}</p>`);
 
       container.innerHTML = `
         <img src="${post.img}" alt="${post.title}" class="article-img">
@@ -224,7 +428,6 @@
         <h1>${post.title}</h1>
         <div class="article-content">
           ${articleBody}
-          <p>At NASNA, we believe in sharing authentic knowledge. This article reflects our passion for pure honey and sustainable apiculture. We hope you enjoyed this read — and remember to always choose raw, ethically sourced honey for both flavor and wellness.</p>
           <p style="margin-top:30px; font-style:italic;"><i class="fas fa-jar"></i> — The NASNA Honey Team</p>
           <p style="margin-top:24px; display:flex; gap:18px; flex-wrap:wrap;">
             <a href="/blog" style="color:#276227; font-weight:700; text-decoration:none;"><i class="fas fa-arrow-left"></i> Explore more honey stories</a>
