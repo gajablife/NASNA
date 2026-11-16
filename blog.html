@@ -1,0 +1,555 @@
+<!-- FILE: blog.html (NASNA Blog Listing Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>NASNA Honey Blog | Pure Honey Stories, Beekeeping & Recipes</title>
+  <meta name="description" content="Explore NASNA's pure honey journal: authentic stories on raw honey wellness, urban beekeeping guides, and healthy honey-infused recipes.">
+  <meta name="keywords" content="NASNA blog, pure honey stories, raw honey benefits, beekeeping tips, honey recipes, apiculture India, natural honey">
+  <meta name="author" content="NASNA Enterprises">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nasna.in/blog">
+  <meta property="og:type" content="blog">
+  <meta property="og:site_name" content="NASNA Enterprises">
+  <meta property="og:title" content="NASNA Honey Blog | Pure Honey Stories, Beekeeping & Recipes">
+  <meta property="og:description" content="Explore NASNA's pure honey journal: authentic stories on raw honey wellness, urban beekeeping guides, and healthy honey-infused recipes.">
+  <meta property="og:url" content="https://nasna.in/blog">
+  <meta property="og:image" content="https://nasna.in/images/logo600x600.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NASNA Honey Blog | Pure Honey Stories, Beekeeping & Recipes">
+  <meta name="twitter:description" content="Explore NASNA's pure honey journal: authentic stories on raw honey wellness, urban beekeeping guides, and healthy honey-infused recipes.">
+  <meta name="twitter:image" content="https://nasna.in/images/logo600x600.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "NASNA Pure Honey Stories",
+      "url": "https://nasna.in/blog",
+      "description": "Authentic knowledge on raw unfiltered honey, apiculture, wellness, and wholesome recipes from NASNA Enterprises.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "NASNA Enterprises",
+        "url": "https://nasna.in/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nasna.in/images/logo600x600.png"
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f4faf4; color: #1a2e1a; }
+    h1, h2, h3, .logo, .nav-links a, .btn { font-family: 'Playfair Display', serif; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+    #siteHeader { min-height: 82px; }
+    .navbar { background: #ffffffee; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(39,98,39,0.06); position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; transition: box-shadow 0.25s ease, background 0.25s ease; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; min-height: 82px; padding: 1rem 2rem; max-width: 1400px; margin: 0 auto; transition: min-height 0.25s ease, padding 0.25s ease; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; font-size: 1.8rem; font-weight: 700; color: #276227; letter-spacing: -0.5px; text-decoration: none; transition: font-size 0.25s ease; }
+    .logo span { color: #3d7a3d; font-weight: 500; }
+    .brand-name { color: #276227; }
+    .brand-name span { color: #3d7a3d; }
+    .brand-mark { width: 0; height: 0; border-radius: 50%; opacity: 0; object-fit: cover; transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease; }
+    .navbar.is-scrolled { background: #fffffff2; box-shadow: 0 8px 24px rgba(39,98,39,0.1); }
+    .navbar.is-scrolled .nav-container { min-height: 64px; padding: 0.55rem 2rem; }
+    .navbar.is-scrolled .logo { font-size: 1.3rem; }
+    .navbar.is-scrolled .brand-mark { width: 38px; height: 38px; opacity: 1; }
+    .navbar.is-scrolled .brand-name span { font-size: 1.08rem; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 600; color: #1e3d1e; transition: 0.2s; font-size: 1.05rem; }
+    .nav-links a:hover, .nav-links a.active { color: #276227; }
+    .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #276227; }
+
+    /* Hero Section */
+    .blog-hero {
+      background: linear-gradient(135deg, #e8f5e9 0%, #d4edd4 60%, #c8e6c9 100%);
+      border-radius: 0 0 56px 56px;
+      padding: 64px 0 50px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(76,175,80,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-block;
+      color: #276227;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.65);
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(76,175,80,0.25);
+    }
+    .blog-hero h1 {
+      color: #1b4d1b;
+      font-size: 3.4rem;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .blog-hero p {
+      color: #2e4a2e;
+      font-size: 1.15rem;
+      line-height: 1.65;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Controls: Filter & Search */
+    .controls-wrapper {
+      margin: 40px auto 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-btn {
+      background: white;
+      color: #276227;
+      border: 1px solid rgba(76, 175, 80, 0.3);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .filter-btn:hover {
+      background: #e8f5e9;
+      border-color: #276227;
+    }
+    .filter-btn.active {
+      background: #276227;
+      color: white;
+      border-color: #276227;
+      box-shadow: 0 4px 12px rgba(39, 98, 39, 0.25);
+    }
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px 16px 10px 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(76, 175, 80, 0.3);
+      background: white;
+      font-size: 0.92rem;
+      font-family: 'Inter', sans-serif;
+      color: #1a2e1a;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-box input:focus {
+      border-color: #276227;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    }
+    .search-box i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #4caf50;
+      font-size: 0.95rem;
+    }
+
+    /* Blog Grid */
+    .blog-main {
+      padding: 20px 0 60px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2.2rem;
+      margin-top: 24px;
+    }
+    .blog-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 26px rgba(39, 98, 39, 0.08);
+      border: 1px solid rgba(76, 175, 80, 0.14);
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 36px rgba(39, 98, 39, 0.15);
+    }
+    .card-img-wrap {
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      position: relative;
+      background: #eef5ee;
+    }
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .blog-card:hover .card-img-wrap img {
+      transform: scale(1.06);
+    }
+    .blog-content {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .blog-category {
+      color: #276227;
+      background: #e8f5e9;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+    }
+    .read-time {
+      font-size: 0.82rem;
+      color: #5c7a5c;
+      font-weight: 500;
+    }
+    .blog-title {
+      font-size: 1.45rem;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: #1b4d1b;
+      font-weight: 700;
+    }
+    .blog-title a {
+      color: #1b4d1b;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .blog-title a:hover {
+      color: #276227;
+    }
+    .blog-excerpt {
+      color: #2e4a2e;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #276227;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.98rem;
+      margin-top: auto;
+      transition: gap 0.2s ease, color 0.2s ease;
+    }
+    .read-more i {
+      transition: transform 0.2s ease;
+    }
+    .read-more:hover {
+      color: #1b4d1b;
+      gap: 12px;
+    }
+    .read-more:hover i {
+      transform: translateX(4px);
+    }
+
+    /* Empty state */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      background: white;
+      border-radius: 32px;
+      border: 1px dashed rgba(76,175,80,0.3);
+    }
+    .empty-state i {
+      font-size: 2.8rem;
+      color: #4caf50;
+      margin-bottom: 16px;
+    }
+    .empty-state h3 {
+      font-size: 1.6rem;
+      color: #1b4d1b;
+      margin-bottom: 8px;
+    }
+    .empty-state p {
+      color: #3a5a3a;
+    }
+
+    /* Newsletter / CTA Banner */
+    .newsletter-band {
+      background: #1a2e1a;
+      color: #d4edd4;
+      border-radius: 36px;
+      padding: 48px 40px;
+      margin: 40px 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .newsletter-text h3 {
+      color: #81c784;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    .newsletter-text p {
+      color: #d4edd4;
+      line-height: 1.6;
+      max-width: 600px;
+      font-size: 1.05rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #276227;
+      color: #ffffff;
+      padding: 13px 26px;
+      border-radius: 40px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 14px rgba(39,98,39,0.3);
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #1b4d1b;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(39,98,39,0.35);
+    }
+
+    /* Footer styling */
+    .footer { background: #1a2e1a; color: #d4edd4; padding: 50px 0 20px; margin-top: 60px; border-radius: 40px 40px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-size: 1.4rem; margin-bottom: 20px; color: #81c784; }
+    .footer-col p, .footer-col ul { line-height: 1.7; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin: 10px 0; }
+    .footer-col ul li i { margin-right: 8px; color: #4caf50; }
+    .social-icons a { color: #d4edd4; font-size: 1.5rem; margin-right: 18px; transition: 0.2s; display: inline-block; }
+    .social-icons a:hover { color: #81c784; transform: translateY(-3px); }
+    .copyright { text-align: center; border-top: 1px solid #2e4d2e; padding-top: 24px; font-size: 0.9rem; }
+
+    @media (max-width: 880px) {
+      #siteHeader { min-height: 88px; }
+      .nav-container { min-height: 88px; padding: 1rem 1.5rem; }
+      .logo { font-size: 1.4rem; }
+      .navbar.is-scrolled { background: #fffffff2; box-shadow: 0 8px 24px rgba(39,98,39,0.1); }
+      .navbar.is-scrolled .nav-container { min-height: 64px; padding: 0.55rem 1.25rem; }
+      .navbar.is-scrolled .logo { font-size: 1.12rem; }
+      .navbar.is-scrolled .brand-mark { width: 36px; height: 36px; opacity: 1; }
+      .navbar.is-scrolled .brand-name span { font-size: 0.95rem; }
+      .nav-links { position: fixed; top: 88px; left: -100%; background: #f4faf4; width: 70%; height: 100vh; flex-direction: column; padding: 2rem; gap: 2rem; box-shadow: 5px 0 20px rgba(39,98,39,0.12); transition: 0.3s; border-radius: 0 32px 32px 0; z-index: 999; }
+      .navbar.is-scrolled .nav-links { top: 64px; }
+      .nav-links.active { left: 0; }
+      .menu-icon { display: block; }
+      .container { padding: 0 20px; }
+      .blog-hero h1 { font-size: 2.4rem; }
+      .controls-wrapper { flex-direction: column; align-items: stretch; }
+      .search-box { width: 100%; }
+      .newsletter-band { flex-direction: column; text-align: center; padding: 32px 24px; }
+    }
+    @media (max-width: 600px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body data-page="blog">
+  <div id="siteHeader"></div>
+
+  <!-- Hero Section -->
+  <section class="blog-hero">
+    <div class="container">
+      <span class="eyebrow"><i class="fas fa-feather-alt"></i> NASNA Journal & Stories</span>
+      <h1>From the Hive & Heart</h1>
+      <p>Discover the secrets of ethical beekeeping, nutritional wonders of raw unfiltered honey, and delicious wholesome recipes handcrafted for your wellbeing.</p>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main class="container blog-main">
+    <!-- Filter and Search Bar -->
+    <div class="controls-wrapper">
+      <div class="category-filters" id="categoryFilters">
+        <button class="filter-btn active" data-category="ALL">All Stories</button>
+        <button class="filter-btn" data-category="BEEKEEPING">Beekeeping</button>
+        <button class="filter-btn" data-category="RECIPES">Recipes</button>
+        <button class="filter-btn" data-category="WELLNESS">Wellness</button>
+      </div>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="blogSearchInput" placeholder="Search stories...">
+      </div>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid" id="blogGrid">
+      <!-- Dynamically Rendered via JS -->
+    </div>
+
+    <!-- Newsletter / Connect Band -->
+    <div class="newsletter-band">
+      <div class="newsletter-text">
+        <h3>Stay Connected with Nature</h3>
+        <p>Follow our journey of sustainable apiculture, receive wholesome seasonal honey recipes, and learn the truth about pure, raw honey.</p>
+      </div>
+      <a href="https://wa.me/919873162762?text=Hello%20NASNA%2C%20I%20would%20like%20to%20subscribe%20to%20your%20updates." class="btn" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Chat with NASNA
+      </a>
+    </div>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="/includes.js"></script>
+  <script>
+    // NASNA Master Blog Posts Database
+    const blogPosts = [
+      {
+        id: 1,
+        slug: "urban-beekeeping-with-nasna",
+        category: "BEEKEEPING",
+        title: "How to Start Urban Beekeeping with NASNA",
+        excerpt: "Discover simple steps to welcome pollinators into your city garden and harvest fresh honey even in small spaces.",
+        readTime: "4 min read",
+        img: "https://placehold.co/800x450/FFE5C4/AC744B?text=NASNA+Beekeeping+Tips",
+        link: "/blog/urban-beekeeping-with-nasna"
+      },
+      {
+        id: 2,
+        slug: "honey-infused-meals-by-nasna",
+        category: "RECIPES",
+        title: "5 Wholesome Honey-Infused Meals by NASNA",
+        excerpt: "Five honey meal ideas with simple health benefits for energy, digestion, immunity and everyday nourishment.",
+        readTime: "5 min read",
+        img: "https://placehold.co/800x450/F5DDAA/B97F42?text=NASNA+Honey+Recipes",
+        link: "/blog/honey-infused-meals-by-nasna"
+      },
+      {
+        id: 3,
+        slug: "raw-honey-vs-processed",
+        category: "WELLNESS",
+        title: "Raw Honey vs Processed: NASNA's Guide",
+        excerpt: "Understand why raw honey is packed with antioxidants, enzymes and beats processed syrups every time.",
+        readTime: "3 min read",
+        img: "https://placehold.co/800x450/EED6B0/996F45?text=NASNA+Health+Tips",
+        link: "/blog/raw-honey-vs-processed"
+      }
+    ];
+
+    let activeCategory = 'ALL';
+    let searchQuery = '';
+
+    function renderBlogList() {
+      const grid = document.getElementById('blogGrid');
+      if (!grid) return;
+
+      const filtered = blogPosts.filter(post => {
+        const matchesCategory = activeCategory === 'ALL' || post.category.toUpperCase() === activeCategory.toUpperCase();
+        const matchesSearch = !searchQuery || 
+          post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          post.category.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <i class="fas fa-search"></i>
+            <h3>No stories found</h3>
+            <p>Try searching with another keyword or selecting a different category.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(post => `
+        <article class="blog-card">
+          <div class="card-img-wrap">
+            <a href="${post.link}">
+              <img src="${post.img}" alt="${post.title}" loading="lazy">
+            </a>
+          </div>
+          <div class="blog-content">
+            <div class="meta-row">
+              <span class="blog-category">${post.category}</span>
+              <span class="read-time"><i class="far fa-clock"></i> ${post.readTime}</span>
+            </div>
+            <h2 class="blog-title">
+              <a href="${post.link}">${post.title}</a>
+            </h2>
+            <p class="blog-excerpt">${post.excerpt}</p>
+            <a href="${post.link}" class="read-more">
+              Read Story <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // Filter Button Listeners
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.dataset.category;
+        renderBlogList();
+      });
+    });
+
+    // Search Input Listener
+    const searchInput = document.getElementById('blogSearchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim();
+        renderBlogList();
+      });
+    }
+
+    // Initial Render
+    renderBlogList();
+  </script>
+</body>
+</html>

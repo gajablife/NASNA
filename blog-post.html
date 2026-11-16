@@ -89,7 +89,10 @@
   <div id="siteHeader"></div>
 
   <div class="blog-detail-container">
-    <a href="/" class="back-home"><i class="fas fa-arrow-left"></i> Back to NASNA Home</a>
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+      <a href="/blog" class="back-home" style="margin-bottom:0;"><i class="fas fa-arrow-left"></i> Back to All Stories</a>
+      <a href="/" class="back-home" style="margin-bottom:0;"><i class="fas fa-home"></i> Home</a>
+    </div>
     <div id="blogDetailContent">
       <div style="text-align:center; padding:60px;"><i class="fas fa-spinner fa-pulse"></i> Loading NASNA honey stories...</div>
     </div>
@@ -153,8 +156,9 @@
     
     const urlParams = new URLSearchParams(window.location.search);
     const postId = parseInt(urlParams.get('id'));
+    const urlSlug = urlParams.get('slug');
     const pathParts = window.location.pathname.split('/').filter(Boolean);
-    const slug = pathParts.length ? pathParts[pathParts.length - 1].replace('.html', '') : '';
+    const slug = urlSlug || (pathParts.length ? pathParts[pathParts.length - 1].replace('.html', '') : '');
     const post = postsDB.find(p => p.id === postId || p.slug === slug);
     const container = document.getElementById('blogDetailContent');
 
@@ -222,14 +226,17 @@
           ${articleBody}
           <p>At NASNA, we believe in sharing authentic knowledge. This article reflects our passion for pure honey and sustainable apiculture. We hope you enjoyed this read — and remember to always choose raw, ethically sourced honey for both flavor and wellness.</p>
           <p style="margin-top:30px; font-style:italic;"><i class="fas fa-jar"></i> — The NASNA Honey Team</p>
-          <p style="margin-top:20px;"><a href="/" style="color:#276227; font-weight:600;">← Explore more NASNA products</a></p>
+          <p style="margin-top:24px; display:flex; gap:18px; flex-wrap:wrap;">
+            <a href="/blog" style="color:#276227; font-weight:700; text-decoration:none;"><i class="fas fa-arrow-left"></i> Explore more honey stories</a>
+            <a href="/" style="color:#276227; font-weight:700; text-decoration:none;"><i class="fas fa-jar"></i> Shop NASNA pure honeys</a>
+          </p>
         </div>
       `;
     } else {
       container.innerHTML = `
         <div style="text-align:center; padding:60px;">
           <h2>Oops! 🍯</h2>
-          <p>This honey story seems to be missing. Go back to the <a href="/" style="color:#276227;">NASNA homepage</a>.</p>
+          <p>This honey story seems to be missing. View <a href="/blog" style="color:#276227; font-weight:600;">all honey stories</a> or return to the <a href="/" style="color:#276227;">homepage</a>.</p>
         </div>
       `;
     }

@@ -8,6 +8,10 @@
   ],
   "rewrites": [
     {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
       "source": "/about",
       "destination": "/about.html"
     },
